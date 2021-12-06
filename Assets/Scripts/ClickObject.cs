@@ -29,6 +29,12 @@ public class ClickObject : MonoBehaviour
             {
                 Debug.Log(hit.transform.name);
                 targetLocation = hit.transform.position;
+                CameraOnTarget CC = hit.GetComponent<CameraOnTarget>();
+                if (CC)
+                {
+                    CameraOnTarget tog = hit.GetComponent<CameraOnTarget>();
+                    Debug.Log(tog.rotationCam_x);
+                }
                 //////////CameraOnTarget tog = hit.GetComponent<CameraOnTarget>();
                 //Debug.Log(tog.rotationCam_x);
                 //Debug.Log(hit.rotationCam_x);
