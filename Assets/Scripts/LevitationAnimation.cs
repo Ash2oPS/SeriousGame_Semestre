@@ -6,13 +6,13 @@ public class LevitationAnimation : MonoBehaviour
 {
 
     private Transform tf;
-    private int timer = 0;
+    private float timer = 0f;
     private float baseX = 0f;
     private float baseY = 0f;
     private float baseZ = 0f;
     private float newY = 0f;
-    public float frequency = 0.002f;
-    public float amplitude = 0.08f;
+    public float frequency = 3f;
+    public float amplitude = 0.1f;
     
     void Start()
     {
@@ -30,6 +30,6 @@ public class LevitationAnimation : MonoBehaviour
 
         tf.position = new Vector3(baseX, newY, baseZ);
 
-        timer++;
+        timer += Time.deltaTime;
     }
 }

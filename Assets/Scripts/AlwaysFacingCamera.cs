@@ -5,11 +5,12 @@ using UnityEngine;
 public class AlwaysFacingCamera : MonoBehaviour
 {
 
-    public Transform cameraToFace;
+    private Transform cameraToFace;
 
     void Start()
     {
         cameraToFace = FindObjectOfType<Camera>().transform;
+        GetComponent<SpriteRenderer>().flipX = true;
     }
 
 
