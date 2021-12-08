@@ -27,14 +27,15 @@ public class ClickObject : MonoBehaviour
 
             if (Physics.Raycast(cameraTransform.position, worldPos - cameraTransform.position, out RaycastHit hit))
             {
+                Debug.Log(hit);
                 Debug.Log(hit.transform.name);
                 targetLocation = hit.transform.position;
-                CameraOnTarget CC = hit.GetComponent<CameraOnTarget>();
-                if (CC)
+                /*CameraOnTarget camera_on_target = hit.GetComponent<CameraOnTarget>();
+                if (camera_on_target)
                 {
                     CameraOnTarget tog = hit.GetComponent<CameraOnTarget>();
                     Debug.Log(tog.rotationCam_x);
-                }
+                }*/
                 //////////CameraOnTarget tog = hit.GetComponent<CameraOnTarget>();
                 //Debug.Log(tog.rotationCam_x);
                 //Debug.Log(hit.rotationCam_x);
@@ -44,7 +45,7 @@ public class ClickObject : MonoBehaviour
                 //cameraTransform.position = targetLocation + positionCamera;
             }
         }
-        cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetLocation + positionCamera, cameraSpeed * Time.deltaTime);
+        //cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetLocation + positionCamera, cameraSpeed * Time.deltaTime);
         //Quaternion target = Quaternion.Euler(hit.)
         //cameraTransform.rotation = Vector3
 

@@ -140,9 +140,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb9f8fa9508bcd40b31f8a1a08dd7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationCam_x: 0
-  rotationCam_y: 219
+  rotationCam_x: 20
+  rotationCam_y: 100
   rotationCam_z: 0
+  positionCamera: {x: 3, y: 4, z: 7}
+  cameraSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: -0.07451899
+      outSlope: 0.0001599203
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: -0.004645138
+      outSlope: 0.0010480398
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 1
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.9
+      value: 1
+      inSlope: -0.0012089116
+      outSlope: 0.0059643923
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.93592054
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: 0.012137427
+      outSlope: 0.012137427
+      tangentMode: 0
+      weightedMode: 1
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  cameraSpeed: 0.2
+--- !u!114 &278006363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278006357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cefdf77fdd3a84584bf0170f9fbd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 278006362}
+        m_TargetAssemblyTypeName: CameraOnTarget, Assembly-CSharp
+        m_MethodName: SetCameraOnTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onEnterOver:
+    m_PersistentCalls:
+      m_Calls: []
+  _onExitOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &490558578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4618742941637962509, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
@@ -235,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsGlobal: 1
+  isGlobal: 1
   priority: 0
   blendDistance: 0
   weight: 1
@@ -250,7 +327,6 @@ Transform:
   m_LocalRotation: {x: 0.022957042, y: -0.97606146, z: 0.17338957, w: -0.12927918}
   m_LocalPosition: {x: 1.6209211, y: -0.13063377, z: 3.1368845}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1687258585}
   m_RootOrder: 0
@@ -308,7 +384,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6212850840104576307, guid: 8e8ab63ac7c8b0343ab8a2c2338e9dd1, type: 3}
       propertyPath: m_Name
-      value: Salle
+      value: Salle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212850840104576307, guid: 8e8ab63ac7c8b0343ab8a2c2338e9dd1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8ab63ac7c8b0343ab8a2c2338e9dd1, type: 3}
@@ -401,7 +481,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2138677393}
   m_Father: {fileID: 0}
@@ -460,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6212850840104576307, guid: 8e8ab63ac7c8b0343ab8a2c2338e9dd1, type: 3}
       propertyPath: m_Name
-      value: Salle
+      value: Salle3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8ab63ac7c8b0343ab8a2c2338e9dd1, type: 3}
@@ -558,7 +637,6 @@ Transform:
   m_LocalRotation: {x: -0.03015367, y: 0.96984637, z: -0.17101005, w: -0.17100999}
   m_LocalPosition: {x: 4.86, y: 2, z: 2.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 653260038}
   m_Father: {fileID: 0}
@@ -586,7 +664,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
   m_Antialiasing: 1
   m_AntialiasingQuality: 2
@@ -619,9 +696,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb9f8fa9508bcd40b31f8a1a08dd7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationCam_x: 0
-  rotationCam_y: 0
+  rotationCam_x: 20
+  rotationCam_y: 200
   rotationCam_z: 0
+  positionCamera: {x: 3, y: 4, z: 7}
+  cameraSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: -0.07451899
+      outSlope: 0.0001599203
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: -0.004645138
+      outSlope: 0.0010480398
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 1
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.9
+      value: 1
+      inSlope: -0.0012089116
+      outSlope: 0.0059643923
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.93592054
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: 0.012137427
+      outSlope: 0.012137427
+      tangentMode: 0
+      weightedMode: 1
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  cameraSpeed: 0.2
+--- !u!114 &2000279374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000279368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cefdf77fdd3a84584bf0170f9fbd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2000279373}
+        m_TargetAssemblyTypeName: CameraOnTarget, Assembly-CSharp
+        m_MethodName: SetCameraOnTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onEnterOver:
+    m_PersistentCalls:
+      m_Calls: []
+  _onExitOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2009867796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -675,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6212850840104576307, guid: 8e8ab63ac7c8b0343ab8a2c2338e9dd1, type: 3}
       propertyPath: m_Name
-      value: Salle
+      value: Salle2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8ab63ac7c8b0343ab8a2c2338e9dd1, type: 3}
@@ -696,9 +850,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb9f8fa9508bcd40b31f8a1a08dd7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationCam_x: 0
-  rotationCam_y: 105
+  rotationCam_x: 20
+  rotationCam_y: 0
   rotationCam_z: 0
+  positionCamera: {x: 3, y: 4, z: 7}
+  cameraSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: -0.07451899
+      outSlope: 0.0001599203
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: -0.004645138
+      outSlope: 0.0010480398
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 1
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.9
+      value: 1
+      inSlope: -0.0012089116
+      outSlope: 0.0059643923
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.93592054
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: 0.012137427
+      outSlope: 0.012137427
+      tangentMode: 0
+      weightedMode: 1
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  cameraSpeed: 0.2
+--- !u!114 &2102747728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102747722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cefdf77fdd3a84584bf0170f9fbd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2102747727}
+        m_TargetAssemblyTypeName: CameraOnTarget, Assembly-CSharp
+        m_MethodName: SetCameraOnTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onEnterOver:
+    m_PersistentCalls:
+      m_Calls: []
+  _onExitOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2132991303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -847,7 +1078,6 @@ Transform:
   m_LocalRotation: {x: 0.7064338, y: 0.47771442, z: 0.030843567, w: 0.5213338}
   m_LocalPosition: {x: 0.24, y: 3, z: 4.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1024798623}
   m_RootOrder: 0
@@ -864,11 +1094,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}

@@ -13,23 +13,38 @@ public class CameraOnTarget : MonoBehaviour
     public float rotationCam_y = 0.0f;
     [Range(0f, 360f)]
     public float rotationCam_z = 0.0f;
+    public Vector3 positionCamera = new Vector3(+3, +4, +7);
+    public AnimationCurve cameraSpeedCurve;
+    public float cameraSpeed;
+    private bool isLerping;
+    private float t;
+    private Quaternion rotOrigin;
+    private Vector3 posOrigin;
 
     public Vector3 directionCamera { get { return new Vector3(rotationCam_x, rotationCam_y, rotationCam_z); } }
 
-    void Start()
+    public void SetCameraOnTarget()
     {
-        //originalGameObject = GameObject.Find("MainObj");
-        //child = originalGameObject.transform.GetChild(0).gameObject;
+        t = 0;
+        rotOrigin = Camera.main.transform.rotation;
+        posOrigin = Camera.main.transform.position;
+        isLerping = true;
+        //Camera.main.transform.rotation = Quaternion.Euler(rotationCam_x, rotationCam_y, rotationCam_z);
     }
 
-    void OnMouseDown()
+    public void Update()
     {
-        Debug.Log("coucou");
-        //Destroy(child);
-    }
+        if(isLerping)
+        {
+            t += cameraSpeedCurve.Evaluate(t) * cameraSpeed * Time.deltaTime;
+            Camera.main.transform.position = Vector3.Lerp(posOrigin, transform.position + positionCamera, t);
+            Camera.main.transform.rotation = Quaternion.Lerp(rotOrigin, Quaternion.Euler(rotationCam_x,rotationCam_y,rotationCam_z), t);
+            //Camera.main.transform.LookAt(transform);
 
-    void Update()
-    {
-        
+            if (t>=1)
+            {
+                isLerping = false;
+            }
+        }
     }
 }
