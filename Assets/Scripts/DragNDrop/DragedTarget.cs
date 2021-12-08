@@ -3,12 +3,14 @@ using UnityEngine.UI;
 
 public class DragedTarget : MonoBehaviour
 {
+    public string itemName;
+
     public void IsDragedOn(DragAndDrop objectDraged)
     {
-        print(objectDraged.name);
         objectDraged.rt.position = ((RectTransform)transform).position;
-        var image = objectDraged.GetComponent<Image>();
-        image.color = new Color (image.color.r, image.color.g,image.color.b, 0.5f);
-
+        var item = objectDraged.GetComponent<DragedTarget>();
+        print("vous venez de combiner " + itemName + " avec " + item.itemName);
+        Destroy(objectDraged.gameObject);
+        Destroy(gameObject);
     }
 }

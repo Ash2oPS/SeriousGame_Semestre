@@ -24,7 +24,7 @@ public class DragAndDrop : Button
         foreach (var result in results)
         {
             var resultAsTarget = result.gameObject.GetComponent<DragedTarget>();
-            if(resultAsTarget)
+            if(resultAsTarget && resultAsTarget.gameObject != gameObject)
             {
                 resultAsTarget.IsDragedOn(this);
             }

@@ -237,6 +237,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &961690156 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4863174258353183591, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+  m_PrefabInstance: {fileID: 4863174257896422323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1024798622
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,26 +278,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2073191826787360858, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
   m_PrefabInstance: {fileID: 5432898141924449845}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1557814573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557814572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7981cb195620040bdfa4781a4b2250, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repliques:
-  - "[J]Bonjour, je suis Jer\xF4me le pigeon."
-  - "[P]Bonjour Jer\xF4me, je suis l'inspecteur en chef de la Brigade des Sardines
-    Ensoleill\xE9es. Je suis ici pour enqu\xEAter sur le vol de la tapisserie."
-  - "[J]ROOOU ! Ca par exemple, oui ! J'ai bien entendu parler de cette affaire !
-    Je me demande bien quel emplum\xE9 a pu faire une chose pareille..."
-  - '[P]OBJECTION !!'
-  - '[J]mdrr'
 --- !u!114 &1557814576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +291,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDialogueOn: 0
-  dialogueUI: {fileID: 0}
+  dialogueUI: {fileID: 961690156}
+  textUi: {fileID: 2144602758}
+  dialogueIndex: 0
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +561,17 @@ Transform:
   m_Father: {fileID: 1024798623}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 52.761, y: 153.249, z: 110.401}
+--- !u!114 &2144602758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4863174258133878303, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+  m_PrefabInstance: {fileID: 4863174257896422323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4863174257896422323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -700,7 +698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 691552467605223766, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 691552467605223766, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -755,6 +753,10 @@ PrefabInstance:
       value: ColorChanger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 691552467605223766, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b47e4c1c6f93cd45bcfe079a901e150, type: 2}
+    - target: {fileID: 691552467605223766, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
       propertyPath: _onEnterOver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ColorChanger, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -772,7 +774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 691552467605223766, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: Dialogue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 691552467605223766, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
       propertyPath: _onExitOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
