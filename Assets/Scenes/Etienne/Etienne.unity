@@ -141,6 +141,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
+--- !u!1 &387454359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4863174257572101754, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+  m_PrefabInstance: {fileID: 4863174257896422323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &387454363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387454359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561470689803ad24b9c8a4a1ef1e3449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 0
+  amplitude: 0
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +685,34 @@ PrefabInstance:
     - target: {fileID: 4863174258353183590, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1557814576}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextString
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b47e4c1c6f93cd45bcfe079a901e150, type: 2}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Dialogue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362288734139481813, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5254902
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}

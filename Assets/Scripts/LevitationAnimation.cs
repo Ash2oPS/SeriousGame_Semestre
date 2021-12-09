@@ -27,8 +27,18 @@ public class LevitationAnimation : MonoBehaviour
     {
         newY = baseY + Mathf.Sin(timer * frequency) * amplitude;
 
+        if(gameObject.layer == 5)
+        {
+            RectTransform rt = GetComponent<RectTransform>();
 
-        tf.position = new Vector3(baseX, newY, baseZ);
+            rt.position = new Vector3(baseX, newY, baseZ);
+        }
+        else
+        {
+            tf.position = new Vector3(baseX, newY, baseZ);
+        }
+
+        
 
         timer += Time.deltaTime;
     }

@@ -29,18 +29,16 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void DialogueBegin(Dialogue d)
     {
-        isDialogueOn = true;
-        dialogueUI.enabled = true; 
-        dialogueIndex = 0;
-        textUi.text = d.dialogue[dialogueIndex];
+        if (!isDialogueOn)
+        {
+            isDialogueOn = true;
+            dialogueUI.enabled = true;
+            dialogueIndex = 0;
+            string newString = NameChanger(d.dialogue[dialogueIndex]);
+            textUi.text = newString;
+        }
     }
 
     public void NextString(Dialogue d)
@@ -63,12 +61,49 @@ public class DialogueManager : MonoBehaviour
         {
             char characterLetter = s[1];
 
-            if (characterLetter == 'J')
+
+            if (characterLetter == 'P')                                     //PLAYER
+            {
+                s = s.Replace("[P]", "");
+
+                Text[] nameTexts = FindObjectsOfType<Text>();
+                foreach (Text nameText in nameTexts)
+                {
+                    if (nameText.transform.name == "Dialogue_NameText")
+                    {
+                        nameText.text = "Player";
+                        nameText.color = new Vector4(0, 0, 0, 1);
+                    }
+                }
+            }
+
+            else if (characterLetter == 'J')                                     //JEROME
             {
                 s = s.Replace("[J]", "");
 
-                //CHANGER LE TEXT EN JEROME ET LA COULEUR EN BLEU PIGEON
-            } // AJOUTER LES AUTRES LETTRES POUR LES AUTRES PERSOS ET CHECKER COMMENT FAIRE UN SWITCH CASE            
+                Text[] nameTexts = FindObjectsOfType<Text>();
+                foreach(Text nameText in nameTexts)
+                {
+                    if (nameText.transform.name == "Dialogue_NameText")
+                    {
+                        nameText.text = "Jérôme";
+                        nameText.color = new Vector4(0.4392157f, 0.5254902f, 0.6392157f, 1);
+                    }
+                }
+            }
+
+            Image[] portraits = FindObjectsOfType<Image>();
+            foreach (Image portrait in portraits)
+            {
+                if (portrait.transform.name == "Dialogue_Perso")
+                {
+                    if (portrait.sprite.name == "Jerome")
+                    {
+                        portrait.GetComponent<LevitationAnimation>().frequency = 20f;
+                        portrait.GetComponent<LevitationAnimation>().amplitude = 5;
+                    }
+                }
+            }
         }
 
         return s;
@@ -76,8 +111,11 @@ public class DialogueManager : MonoBehaviour
 
     public void DialogueEnd()
     {
-        isDialogueOn = false;
-        dialogueUI.enabled = false;
+        if (isDialogueOn)
+        {
+            isDialogueOn = false;
+            dialogueUI.enabled = false;
+        }
     }
 
 }
