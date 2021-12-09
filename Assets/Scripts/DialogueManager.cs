@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public Canvas dialogueUI = null;
     public Text textUi = null;
     public int dialogueIndex = 0;
+    public Dialogue[] allDialogues;
 
     // Start is called before the first frame update
     void Awake()
@@ -27,10 +28,31 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueUI.enabled = false;
         }
+
+        Text[] textsUi = FindObjectsOfType<Text>();
+        foreach(Text text in textsUi)
+        {
+            if(text.transform.name == "Dialogue_Text")
+            {
+                textUi = text;
+            }
+        }
     }
 
-    public void DialogueBegin(Dialogue d)
+    public Dialogue DialoguePicker(string Character
+        )
     {
+        DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
+        Dialogue d = null;
+
+        //JGCGEKJHGYDKGEKYD GKGKDEGDKGKJG UYDFAUT FAIRE LE DIALOGUE PICKER
+        
+        return d;
+    }
+
+    public void DialogueBegin(string CharacterClicked)
+    {
+        Dialogue d = DialoguePicker(CharacterClicked);
         if (!isDialogueOn)
         {
             isDialogueOn = true;
@@ -41,8 +63,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void NextString(Dialogue d)
+    public void NextString(string CharacterClicked)
     {
+        Dialogue d = DialoguePicker(CharacterClicked);
+
         dialogueIndex++;
         if(dialogueIndex + 1 > d.dialogue.Length)
         {
@@ -62,7 +86,7 @@ public class DialogueManager : MonoBehaviour
             char characterLetter = s[1];
 
 
-            if (characterLetter == 'P')                                     //PLAYER
+            if (characterLetter == 'P')                                         //PLAYER
             {
                 s = s.Replace("[P]", "");
 
@@ -73,6 +97,20 @@ public class DialogueManager : MonoBehaviour
                     {
                         nameText.text = "Player";
                         nameText.color = new Vector4(0, 0, 0, 1);
+                    }
+                }
+
+                Image[] allPortraits = FindObjectsOfType<Image>();
+                foreach (Image portrait in allPortraits)
+                {
+                    if (portrait.transform.tag == "Portrait") 
+                    {
+                        LevitationAnimation la = portrait.GetComponent<LevitationAnimation>();
+                        RectTransform rt = portrait.GetComponent<RectTransform>();
+                        la.frequency = 0f;
+                        la.amplitude = 0f;
+                        la.timer = 0f;
+                        rt.position = new Vector3(la.baseX, la.baseY, la.baseZ);
                     }
                 }
             }
@@ -90,17 +128,18 @@ public class DialogueManager : MonoBehaviour
                         nameText.color = new Vector4(0.4392157f, 0.5254902f, 0.6392157f, 1);
                     }
                 }
-            }
-
-            Image[] portraits = FindObjectsOfType<Image>();
-            foreach (Image portrait in portraits)
-            {
-                if (portrait.transform.name == "Dialogue_Perso")
+                Image[] portraits = FindObjectsOfType<Image>();
+                foreach (Image portrait in portraits)
                 {
-                    if (portrait.sprite.name == "Jerome")
+                    if (portrait.transform.tag == "Portrait")
                     {
-                        portrait.GetComponent<LevitationAnimation>().frequency = 20f;
-                        portrait.GetComponent<LevitationAnimation>().amplitude = 5;
+                        if (portrait.sprite.name == "Jerome")
+                        {
+                            LevitationAnimation la = portrait.GetComponent<LevitationAnimation>();
+                            RectTransform rt = portrait.GetComponent<RectTransform>();
+                            la.frequency = 20f;
+                            la.amplitude = 5f;
+                        }
                     }
                 }
             }
