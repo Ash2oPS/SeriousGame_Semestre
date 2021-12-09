@@ -10,10 +10,13 @@
 #Ecran {
     float: left;
     height: 1080px;
-    margin: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
     clear: none;
     width: 2400px;
     position: relative;
+    margin-right: 0px;
+    margin-bottom: 0px;
 }
 
 #Bouton_JOUER {

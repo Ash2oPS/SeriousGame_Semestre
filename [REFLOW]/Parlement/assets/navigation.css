@@ -5,18 +5,16 @@
     margin-right: auto;
     min-height: 100%;
     width: 2400px;
+    position: relative;
 }
 
 #Ecran {
     float: left;
     height: 1080px;
-    margin-left: 0px;
-    margin-top: 0px;
+    margin: 0px 0px 0px -555px;
     clear: none;
     width: 2400px;
     position: relative;
-    margin-right: 0px;
-    margin-bottom: 0px;
 }
 
 #Bouton_JOURNAL {
@@ -36,14 +34,16 @@
 
 #Bouton_OPTIONS {
     float: left;
-    height: 242px;
+    height: 140px;
     font-size: 60px;
     clear: none;
-    width: 10.75%;
+    width: 140px;
     display: block;
     position: absolute;
     top: 34px;
-    left: 14.729818%;
+    left: 300px;
+    opacity: 0;
+    right: auto;
 }
 
 #Bouton_MAP {
@@ -105,9 +105,9 @@
 
 #Image_JOURNAL {
     float: left;
-    width: auto;
+    width: 240px;
     max-width: 10%;
-    height: auto;
+    height: 240px;
     clear: none;
     color: rgb(0, 0, 0);
     position: absolute;
@@ -115,7 +115,7 @@
     left: 3%;
     bottom: auto;
     z-index: 1;
-    opacity: 0.83;
+    opacity: 1;
     border-top-left-radius: 200px;
     border-top-right-radius: 200px;
     border-bottom-right-radius: 200px;
@@ -124,13 +124,13 @@
 
 #Image_MAP {
     float: left;
-    width: auto;
-    height: auto;
+    width: 239px;
+    height: 240px;
     clear: none;
     color: rgb(0, 0, 0);
     position: absolute;
     top: 210px;
-    left: 87%;
+    left: 2080px;
     z-index: 1;
     bottom: auto;
     border-top-left-radius: 200px;
@@ -138,6 +138,7 @@
     border-bottom-right-radius: 200px;
     border-bottom-left-radius: 200px;
     max-width: 9.998047%;
+    right: 0px;
 }
 
 #Image_OBJECTIFS {
@@ -151,5 +152,30 @@
     top: 51px;
     left: 973.453125px;
     z-index: 1;
+}
+
+#Image_OPTIONS {
+    float: left;
+    width: 140px;
+    max-width: 6.083333%;
+    height: 140px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 40px;
+    left: 300px;
+    right: auto;
+    bottom: auto;
+}
+
+#image {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 13.125%;
+    margin-top: 621px;
+    clear: none;
+    color: rgb(0, 0, 0);
 }
 
