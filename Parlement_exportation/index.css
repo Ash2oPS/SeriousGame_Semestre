@@ -1,0 +1,46 @@
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 2400px;
+}
+
+#Ecran {
+    float: left;
+    height: 1080px;
+    margin: 0px;
+    clear: none;
+    width: 2400px;
+    position: relative;
+}
+
+#Bouton_JOUER {
+    float: left;
+    height: 314px;
+    font-size: 134px;
+    clear: none;
+    width: 30.499349%;
+    position: absolute;
+    top: 611.40625px;
+    left: 54.291667%;
+    border-top-left-radius: 180px;
+    border-top-right-radius: 180px;
+    border-bottom-right-radius: 180px;
+    border-bottom-left-radius: 180px;
+    opacity: 0;
+    display: block;
+}
+
+#image {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0px;
+    left: 0%;
+}
+

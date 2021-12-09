@@ -1,0 +1,155 @@
+/* Le code généré est uniquement destiné à visualiser votre création Reflow. */
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 2400px;
+}
+
+#Ecran {
+    float: left;
+    height: 1080px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    width: 2400px;
+    position: relative;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+#Bouton_JOURNAL {
+    float: left;
+    height: 262px;
+    font-size: 60px;
+    clear: none;
+    width: 10.582031%;
+    position: absolute;
+    top: 202px;
+    left: 2.749349%;
+    display: block;
+    opacity: 0;
+    z-index: 2;
+    visibility: visible;
+}
+
+#Bouton_OPTIONS {
+    float: left;
+    height: 242px;
+    font-size: 60px;
+    clear: none;
+    width: 10.75%;
+    display: block;
+    position: absolute;
+    top: 34px;
+    left: 14.729818%;
+}
+
+#Bouton_MAP {
+    float: left;
+    height: 262px;
+    font-size: 60px;
+    clear: none;
+    width: 11%;
+    display: block;
+    position: absolute;
+    top: 202px;
+    left: 86%;
+    z-index: 2;
+    bottom: auto;
+    right: auto;
+    visibility: visible;
+    opacity: 0;
+}
+
+#Bouton_INTERACTION_OBJET_PERSO {
+    float: left;
+    height: 384px;
+    font-size: 60px;
+    clear: none;
+    width: 10.916016%;
+    position: absolute;
+    top: 254px;
+    left: 24.479818%;
+    display: block;
+    opacity: 0.56;
+}
+
+#Encadré_OBJECTIFS {
+    float: left;
+    height: 155px;
+    clear: none;
+    width: 28.916667%;
+    position: absolute;
+    top: 40px;
+    left: 38.978516%;
+    background-color: rgb(70, 39, 11);
+    visibility: visible;
+    opacity: 0.5;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+}
+
+#Image_NAVIGATION {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+}
+
+#Image_JOURNAL {
+    float: left;
+    width: auto;
+    max-width: 10%;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 210px;
+    left: 3%;
+    bottom: auto;
+    z-index: 1;
+    opacity: 0.83;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    border-bottom-left-radius: 200px;
+}
+
+#Image_MAP {
+    float: left;
+    width: auto;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 210px;
+    left: 87%;
+    z-index: 1;
+    bottom: auto;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    border-bottom-left-radius: 200px;
+    max-width: 9.998047%;
+}
+
+#Image_OBJECTIFS {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 51px;
+    left: 973.453125px;
+    z-index: 1;
+}
+
