@@ -6,10 +6,10 @@ public class LevitationAnimation : MonoBehaviour
 {
 
     private Transform tf;
-    private float timer = 0f;
-    private float baseX = 0f;
-    private float baseY = 0f;
-    private float baseZ = 0f;
+    public float timer = 0f;
+    public float baseX = 0f;
+    public float baseY = 0f;
+    public float baseZ = 0f;
     private float newY = 0f;
     public float frequency = 3f;
     public float amplitude = 0.1f;
