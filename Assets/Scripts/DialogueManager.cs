@@ -206,13 +206,13 @@ public class DialogueManager : MonoBehaviour
 
             if (talkingCharacter == "jerome")
             {
-                if (DialoguePicker(talkingCharacter).name == "jerome" && dtp.nbJerome == 3)
+                if (talkingCharacter == "jerome" && dtp.nbJerome == 3)
                 {
                     return;
                 }
                 else
                 {
-                    dtp.nbJerome++;
+                    Debug.Log(talkingCharacter + dtp.nbJerome);
                 }
             }
             talkingCharacter = "";
