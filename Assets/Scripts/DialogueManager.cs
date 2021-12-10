@@ -212,7 +212,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log(talkingCharacter + dtp.nbJerome);
+                    dtp.nbJerome++;
                 }
             }
             talkingCharacter = "";
