@@ -10,11 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af149f282798f864194b4c864a876edf, type: 3}
-  m_Name: Jerome1_DIAL
+  m_Name: Jerome4_DIAL
   m_EditorClassIdentifier: 
   dialogue:
-  - "[J] Salut ROUROUROUROURO je suis J\xE9r\xF4me le pigeon ROUROUROURORUORUORUORUOR"
-  - '[P]oui mdr'
-  - '[J]haha'
-  - '[P]des barres'
-  - "[J]test de saut de ligne\\nj'ai saut\xE9 une ligne"
+  - '[J]...'

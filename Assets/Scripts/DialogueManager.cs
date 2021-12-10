@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Text textUi = null;
     public int dialogueIndex = 0;
     public Dialogue[] allDialogues;
+    public string talkingCharacter;
 
     // Start is called before the first frame update
     void Awake()
@@ -39,13 +40,57 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public Dialogue DialoguePicker(string Character
-        )
+    public Dialogue DialoguePicker(string character)
     {
         DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
         Dialogue d = null;
 
-        //JGCGEKJHGYDKGEKYD GKGKDEGDKGKJG UYDFAUT FAIRE LE DIALOGUE PICKER
+        if(character == "jerome")
+        {
+            switch (dtp.nbJerome)
+            {
+                case 0:
+                    foreach(Dialogue dial in allDialogues)
+                    {                       
+                        if (dial.name == "Jerome1_DIAL")
+                        {
+                            d = dial;
+                        }
+                    }
+                    break;
+                case 1:
+                    foreach (Dialogue dial in allDialogues)
+                    {
+                        if (dial.name == "Jerome2_DIAL")
+                        {
+                            d = dial;
+                        }
+                    }
+                    break;
+                case 2:
+                    foreach (Dialogue dial in allDialogues)
+                    {
+                        if (dial.name == "Jerome3_DIAL")
+                        {
+                            d = dial;
+                        }
+                    }
+                    break;
+                case 3:
+                    foreach (Dialogue dial in allDialogues)
+                    {
+                        if (dial.name == "Jerome4_DIAL")
+                        {
+                            d = dial;
+                        }
+                    }
+                    break;
+            }
+        }
+        else
+        {
+            Debug.LogWarning(transform.name + ".DialoguePicker - string parametre de nom de perso incorrect.");
+        }
         
         return d;
     }
@@ -53,6 +98,7 @@ public class DialogueManager : MonoBehaviour
     public void DialogueBegin(string CharacterClicked)
     {
         Dialogue d = DialoguePicker(CharacterClicked);
+        talkingCharacter = CharacterClicked;
         if (!isDialogueOn)
         {
             isDialogueOn = true;
@@ -63,9 +109,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void NextString(string CharacterClicked)
+    public void NextString()
     {
-        Dialogue d = DialoguePicker(CharacterClicked);
+        
+        Dialogue d = DialoguePicker(talkingCharacter);
 
         dialogueIndex++;
         if(dialogueIndex + 1 > d.dialogue.Length)
@@ -154,6 +201,22 @@ public class DialogueManager : MonoBehaviour
         {
             isDialogueOn = false;
             dialogueUI.enabled = false;
+
+            DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
+
+            if (talkingCharacter == "jerome")
+            {
+                if (DialoguePicker(talkingCharacter).name == "jerome" && dtp.nbJerome == 3)
+                {
+                    return;
+                }
+                else
+                {
+                    dtp.nbJerome++;
+                }
+            }
+            talkingCharacter = "";
+
         }
     }
 

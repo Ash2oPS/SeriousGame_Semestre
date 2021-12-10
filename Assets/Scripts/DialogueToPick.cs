@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class DialogueToPick : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int sequence;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // NOMBRE DE FOIS QU'ON PARLE A TEL PERSO (REMIS A 0 A UN CHANGEMENT DE SEQUENCE)
+
+    public int nbJerome = 0;
 }
