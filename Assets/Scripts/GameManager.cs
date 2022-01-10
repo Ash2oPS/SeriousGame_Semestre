@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Room
+{
+    room1
+}
+
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Room currentRoom;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        currentRoom = Room.room1;
     }
 }

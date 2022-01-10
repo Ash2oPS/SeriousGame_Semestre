@@ -153,6 +153,17 @@ MonoBehaviour:
   wall_speed: 2
   listOfStartingPos: []
   ending_pos: {x: 0, y: 0, z: 0}
+--- !u!114 &79238085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6222417928429027508, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
+  m_PrefabInstance: {fileID: 1251933645}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79238077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6fd840079a8dd4089cc1639550f0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &160205218 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: df54d67dd527ac2428dd3024db18702e, type: 3}
@@ -229,7 +240,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 0ff476e951c2d064a987dfb4728c4d77, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c907e76b9eb8cf44c8c912d33f09e0a6, type: 2}
+      objectReference: {fileID: 2100000, guid: af4a23adfb3ec9b418ad2e590d89c319, type: 2}
     - target: {fileID: 919132149155446097, guid: 0ff476e951c2d064a987dfb4728c4d77, type: 3}
       propertyPath: m_Name
       value: Sequ_B_Angle_Haut_Gauche_Salle_26
@@ -433,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 7393388072637104017, guid: 8e8ab63ac7c8b0343ab8a2c2338e9dd1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a8f5ef44efb2a61468c230de6bfad294, type: 2}
+      objectReference: {fileID: 2100000, guid: af4a23adfb3ec9b418ad2e590d89c319, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8ab63ac7c8b0343ab8a2c2338e9dd1, type: 3}
 --- !u!1 &1024798622
@@ -492,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df54d67dd527ac2428dd3024db18702e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df54d67dd527ac2428dd3024db18702e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -533,7 +544,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: df54d67dd527ac2428dd3024db18702e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c907e76b9eb8cf44c8c912d33f09e0a6, type: 2}
+      objectReference: {fileID: 2100000, guid: af4a23adfb3ec9b418ad2e590d89c319, type: 2}
     - target: {fileID: 919132149155446097, guid: df54d67dd527ac2428dd3024db18702e, type: 3}
       propertyPath: m_Name
       value: Sequ_B_Angle_Bas_Gauche_Salle_26
@@ -695,10 +706,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
@@ -706,7 +721,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 79238084}
     - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 79238085}
+    - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
@@ -714,11 +737,23 @@ PrefabInstance:
       value: Switch_Walls_Position
       objectReference: {fileID: 0}
     - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: BoolAssombrissementDeSalle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: WallMovement, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SalleNoire, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590056923628921195, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2590497899366831424, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
@@ -785,6 +820,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6222417928429027508, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
+      propertyPath: materialDeLaSalleAAssombrir
+      value: 
+      objectReference: {fileID: 2100000, guid: af4a23adfb3ec9b418ad2e590d89c319, type: 2}
     - target: {fileID: 8213205473930243714, guid: 11f19ff5bf8c71541a65bdc2958410a0, type: 3}
       propertyPath: rotationCam_x
       value: 17
@@ -934,7 +973,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5cb91e396fd254349ab7773b7159ee6e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c907e76b9eb8cf44c8c912d33f09e0a6, type: 2}
+      objectReference: {fileID: 2100000, guid: af4a23adfb3ec9b418ad2e590d89c319, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cb91e396fd254349ab7773b7159ee6e, type: 3}
       propertyPath: m_Name
       value: Sequ_B_Angle_Haut_Droit_Salle_26
@@ -1181,6 +1220,14 @@ PrefabInstance:
       propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7768767013421731491}
+    - target: {fileID: 691552467605223766, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DialogueBegin
+      objectReference: {fileID: 0}
+    - target: {fileID: 691552467605223766, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
+      propertyPath: _onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: millie
+      objectReference: {fileID: 0}
     - target: {fileID: 2073191826787360858, guid: 55a9ac29e8a0b434eb4d680f53bd0d9d, type: 3}
       propertyPath: m_Name
       value: Millie
@@ -1433,6 +1480,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4863174258133878303, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_Text
+      value: "Salut je suis J\xE9r\xF4me le pigeon ROUROULLLLLLLLLLLLLLLLLLLLLL\nLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+      objectReference: {fileID: 0}
     - target: {fileID: 4863174258353183587, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
       propertyPath: m_Name
       value: Dialogue_Canvas
@@ -1529,6 +1580,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7768767013421731491}
+    - target: {fileID: 6362288734139481813, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_Text
+      value: "J\xE9r\xF4me"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
 --- !u!1001 &5432898141924449845

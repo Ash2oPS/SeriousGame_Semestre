@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Character
+{
+    jerome, millie
+}
+
 public class DialogueManager : MonoBehaviour
 {
-
     public bool isDialogueOn = false;
     public Canvas dialogueUI = null;
     public Text textUi = null;
@@ -14,7 +18,7 @@ public class DialogueManager : MonoBehaviour
     public string talkingCharacter;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         Canvas[] listOfCanvas = FindObjectsOfType<Canvas>();
         foreach (Canvas currentCanvas in listOfCanvas)
@@ -31,9 +35,9 @@ public class DialogueManager : MonoBehaviour
         }
 
         Text[] textsUi = FindObjectsOfType<Text>();
-        foreach(Text text in textsUi)
+        foreach (Text text in textsUi)
         {
-            if(text.transform.name == "Dialogue_Text")
+            if (text.transform.name == "Dialogue_Text")
             {
                 textUi = text;
             }
@@ -45,19 +49,20 @@ public class DialogueManager : MonoBehaviour
         DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
         Dialogue d = null;
 
-        if(character == "jerome")
+        if (character == "jerome")
         {
             switch (dtp.nbJerome)
             {
                 case 0:
-                    foreach(Dialogue dial in allDialogues)
-                    {                       
+                    foreach (Dialogue dial in allDialogues)
+                    {
                         if (dial.name == "Jerome1_DIAL")
                         {
                             d = dial;
                         }
                     }
                     break;
+
                 case 1:
                     foreach (Dialogue dial in allDialogues)
                     {
@@ -67,6 +72,7 @@ public class DialogueManager : MonoBehaviour
                         }
                     }
                     break;
+
                 case 2:
                     foreach (Dialogue dial in allDialogues)
                     {
@@ -76,6 +82,7 @@ public class DialogueManager : MonoBehaviour
                         }
                     }
                     break;
+
                 case 3:
                     foreach (Dialogue dial in allDialogues)
                     {
@@ -91,13 +98,13 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning(transform.name + ".DialoguePicker - string parametre de nom de perso incorrect.");
         }
-        
+
         return d;
     }
 
-    public void DialogueBegin(string CharacterClicked)
+    public void DialogueBegin(int CharacterClicked)
     {
-        Dialogue d = DialoguePicker(CharacterClicked);
+        /*Dialogue d = DialoguePicker(CharacterClicked);
         talkingCharacter = CharacterClicked;
         if (!isDialogueOn)
         {
@@ -106,16 +113,15 @@ public class DialogueManager : MonoBehaviour
             dialogueIndex = 0;
             string newString = NameChanger(d.dialogue[dialogueIndex]);
             textUi.text = newString;
-        }
+        }*/
     }
 
     public void NextString()
     {
-        
         Dialogue d = DialoguePicker(talkingCharacter);
 
         dialogueIndex++;
-        if(dialogueIndex + 1 > d.dialogue.Length)
+        if (dialogueIndex + 1 > d.dialogue.Length)
         {
             DialogueEnd();
             return;
@@ -131,7 +137,6 @@ public class DialogueManager : MonoBehaviour
         if (s[0] == '[')
         {
             char characterLetter = s[1];
-
 
             if (characterLetter == 'P')                                         //PLAYER
             {
@@ -150,7 +155,7 @@ public class DialogueManager : MonoBehaviour
                 Image[] allPortraits = FindObjectsOfType<Image>();
                 foreach (Image portrait in allPortraits)
                 {
-                    if (portrait.transform.tag == "Portrait") 
+                    if (portrait.transform.tag == "Portrait")
                     {
                         LevitationAnimation la = portrait.GetComponent<LevitationAnimation>();
                         RectTransform rt = portrait.GetComponent<RectTransform>();
@@ -161,13 +166,12 @@ public class DialogueManager : MonoBehaviour
                     }
                 }
             }
-
             else if (characterLetter == 'J')                                     //JEROME
             {
                 s = s.Replace("[J]", "");
 
                 Text[] nameTexts = FindObjectsOfType<Text>();
-                foreach(Text nameText in nameTexts)
+                foreach (Text nameText in nameTexts)
                 {
                     if (nameText.transform.name == "Dialogue_NameText")
                     {
@@ -216,8 +220,6 @@ public class DialogueManager : MonoBehaviour
                 }
             }
             talkingCharacter = "";
-
         }
     }
-
 }
