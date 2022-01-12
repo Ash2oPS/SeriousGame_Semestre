@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public enum Character
 {
-    jerome, millie
+    none, jerome, nathalie, axel, nico, louis, thibault, selene
+    //jerome pigeon, nathalie souris, axel pieuvre, nico morse, louis aigle, thibault tortue, selene lapine
 }
 
 public class DialogueManager : MonoBehaviour
@@ -15,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     public Text textUi = null;
     public int dialogueIndex = 0;
     public Dialogue[] allDialogues;
-    public string talkingCharacter;
+    public Character talkingCharacter;
 
     // Start is called before the first frame update
     private void Awake()
@@ -44,68 +45,341 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public Dialogue DialoguePicker(string character)
+    public Dialogue DialoguePicker()
     {
         DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
         Dialogue d = null;
 
-        if (character == "jerome")
+        switch (talkingCharacter)
         {
-            switch (dtp.nbJerome)
-            {
-                case 0:
-                    foreach (Dialogue dial in allDialogues)
-                    {
-                        if (dial.name == "Jerome1_DIAL")
+            case Character.jerome:
+                switch (dtp.nbJerome)
+                {
+                    case 0:
+                        foreach (Dialogue dial in allDialogues)
                         {
-                            d = dial;
+                            if (dial.name == "Jerome1_DIAL")
+                            {
+                                d = dial;
+                            }
                         }
-                    }
-                    break;
+                        break;
 
-                case 1:
-                    foreach (Dialogue dial in allDialogues)
-                    {
-                        if (dial.name == "Jerome2_DIAL")
+                    case 1:
+                        foreach (Dialogue dial in allDialogues)
                         {
-                            d = dial;
+                            if (dial.name == "Jerome2_DIAL")
+                            {
+                                d = dial;
+                            }
                         }
-                    }
-                    break;
+                        break;
 
-                case 2:
-                    foreach (Dialogue dial in allDialogues)
-                    {
-                        if (dial.name == "Jerome3_DIAL")
+                    case 2:
+                        foreach (Dialogue dial in allDialogues)
                         {
-                            d = dial;
+                            if (dial.name == "Jerome3_DIAL")
+                            {
+                                d = dial;
+                            }
                         }
-                    }
-                    break;
+                        break;
 
-                case 3:
-                    foreach (Dialogue dial in allDialogues)
-                    {
-                        if (dial.name == "Jerome4_DIAL")
+                    case 3:
+                        foreach (Dialogue dial in allDialogues)
                         {
-                            d = dial;
+                            if (dial.name == "Jerome4_DIAL")
+                            {
+                                d = dial;
+                            }
                         }
-                    }
-                    break;
-            }
-        }
-        else
-        {
-            Debug.LogWarning(transform.name + ".DialoguePicker - string parametre de nom de perso incorrect.");
+                        break;
+                }
+                break;
+
+            case Character.nathalie:
+                switch (dtp.nbJerome)
+                {
+                    case 0:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome1_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 1:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome2_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 2:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome3_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome4_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+                }
+                break;
+
+            case Character.axel:
+                switch (dtp.nbJerome)
+                {
+                    case 0:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome1_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 1:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome2_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 2:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome3_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome4_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+                }
+                break;
+
+            case Character.nico:
+                switch (dtp.nbJerome)
+                {
+                    case 0:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome1_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 1:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome2_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 2:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome3_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome4_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+                }
+                break;
+
+            case Character.louis:
+                switch (dtp.nbJerome)
+                {
+                    case 0:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome1_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 1:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome2_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 2:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome3_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome4_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+                }
+                break;
+
+            case Character.thibault:
+                switch (dtp.nbJerome)
+                {
+                    case 0:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome1_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 1:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome2_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 2:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome3_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome4_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+                }
+                break;
+
+            case Character.selene:
+                switch (dtp.nbJerome)
+                {
+                    case 0:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome1_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 1:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome2_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 2:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome3_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        foreach (Dialogue dial in allDialogues)
+                        {
+                            if (dial.name == "Jerome4_DIAL")
+                            {
+                                d = dial;
+                            }
+                        }
+                        break;
+                }
+                break;
+
+            default:
+                Debug.LogWarning(transform.name + ".DialoguePicker - talking character incorrect");
+                break;
         }
 
         return d;
     }
 
-    public void DialogueBegin(int CharacterClicked)
+    public void DialogueBegin()
     {
-        /*Dialogue d = DialoguePicker(CharacterClicked);
-        talkingCharacter = CharacterClicked;
+        /*
+        talkingCharacter = (Character)CharacterClicked;
+        Dialogue d = DialoguePicker();
         if (!isDialogueOn)
         {
             isDialogueOn = true;
@@ -113,12 +387,13 @@ public class DialogueManager : MonoBehaviour
             dialogueIndex = 0;
             string newString = NameChanger(d.dialogue[dialogueIndex]);
             textUi.text = newString;
-        }*/
+        }
+        */
     }
 
     public void NextString()
     {
-        Dialogue d = DialoguePicker(talkingCharacter);
+        Dialogue d = DialoguePicker();
 
         dialogueIndex++;
         if (dialogueIndex + 1 > d.dialogue.Length)
@@ -208,18 +483,43 @@ public class DialogueManager : MonoBehaviour
 
             DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
 
-            if (talkingCharacter == "jerome")
+            switch (talkingCharacter)
             {
-                if (talkingCharacter == "jerome" && dtp.nbJerome == 3)
-                {
-                    return;
-                }
-                else
-                {
-                    dtp.nbJerome++;
-                }
+                case Character.jerome:
+                    switch (dtp.currentSequence)
+                    {
+                        case Sequence.investigation1:
+                            if (dtp.nbJerome == 3)
+                            {
+                                return;
+                            }
+                            else
+                            {
+                                dtp.nbJerome++;
+                            }
+                            break;
+                    }
+                    break;
+
+                case Character.nathalie:
+                    break;
+
+                case Character.axel:
+                    break;
+
+                case Character.nico:
+                    break;
+
+                case Character.louis:
+                    break;
+
+                case Character.thibault:
+                    break;
+
+                case Character.selene:
+                    break;
             }
-            talkingCharacter = "";
+            talkingCharacter = Character.none;
         }
     }
 }

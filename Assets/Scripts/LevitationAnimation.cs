@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LevitationAnimation : MonoBehaviour
 {
-
     private Transform tf;
     public float timer = 0f;
     public float baseX = 0f;
@@ -13,8 +12,8 @@ public class LevitationAnimation : MonoBehaviour
     private float newY = 0f;
     public float frequency = 3f;
     public float amplitude = 0.1f;
-    
-    void Start()
+
+    private void Start()
     {
         tf = transform;
         baseX = tf.position.x;
@@ -22,12 +21,11 @@ public class LevitationAnimation : MonoBehaviour
         baseZ = tf.position.z;
     }
 
-
-    void Update()
+    private void Update()
     {
         newY = baseY + Mathf.Sin(timer * frequency) * amplitude;
 
-        if(gameObject.layer == 5)
+        if (gameObject.layer == 5)
         {
             RectTransform rt = GetComponent<RectTransform>();
 
@@ -37,8 +35,6 @@ public class LevitationAnimation : MonoBehaviour
         {
             tf.position = new Vector3(baseX, newY, baseZ);
         }
-
-        
 
         timer += Time.deltaTime;
     }
