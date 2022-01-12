@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af149f282798f864194b4c864a876edf, type: 3}
-  m_Name: Jerome1_DIAL
+  m_Name: ThibaultA2_D
   m_EditorClassIdentifier: 
   dialogue:
-  - '[J]Bonjour, je suis JREOME LE PIGEPIGE'
-  - '[P]Loule'
-  - '[J]Oui.'
+  - quiParle: 6
+    emotionDuPerso: 0
+    replique: QUOOOIIII ????
+    animation: 0
+    evenement: 1
+    persoEvenement: 6

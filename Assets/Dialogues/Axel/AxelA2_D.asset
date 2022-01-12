@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af149f282798f864194b4c864a876edf, type: 3}
-  m_Name: Jerome2_DIAL
+  m_Name: AxelA2_D
   m_EditorClassIdentifier: 
   dialogue:
-  - '[J]Quoi ? Tu veux quoi encore ?'
-  - "Tu veux te p\xE9ta ?"
-  - Je t'attends
-  - "Et tu remarqueras que c'est pas le m\xEAme dialogue qu'avant ! :D"
-  - "[P]Oui j'ai remarqu\xE9, osef"
-  - '[J]Boh, c''est pas ultra gentil'
+  - quiParle: 3
+    emotionDuPerso: 0
+    replique: "Hmmoui ? Je suis occup\xE9."
+    animation: 0
+    evenement: 1
+    persoEvenement: 3
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: Ok pardon.
+    animation: 0
+    evenement: 0
+    persoEvenement: 0

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af149f282798f864194b4c864a876edf, type: 3}
+  m_Name: ThibaultA1_D
+  m_EditorClassIdentifier: 
+  dialogue:
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: Bonjour vieillard, qui es-tu ?
+    animation: 0
+    evenement: 1
+    persoEvenement: 6
+  - quiParle: 6
+    emotionDuPerso: 0
+    replique: Quoiiii ? Qu'est-ce qui dit ?
+    animation: 0
+    evenement: 0
+    persoEvenement: 0
+  - quiParle: 5
+    emotionDuPerso: 0
+    replique: "Il demande qui vous \xEAtes."
+    animation: 0
+    evenement: 1
+    persoEvenement: 5
+  - quiParle: 6
+    emotionDuPerso: 0
+    replique: Ah daccord.
+    animation: 0
+    evenement: 2
+    persoEvenement: 5
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: Et donc... ?
+    animation: 0
+    evenement: 2
+    persoEvenement: 6

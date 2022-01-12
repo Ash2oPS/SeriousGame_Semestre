@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Character
-{
-    none, jerome, nathalie, axel, nico, louis, thibault, selene
-    //jerome pigeon, nathalie souris, axel pieuvre, nico morse, louis aigle, thibault tortue, selene lapine
-}
-
 public class DialogueManager : MonoBehaviour
 {
     public bool isDialogueOn = false;
@@ -402,9 +396,9 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string newString = NameChanger(d.dialogue[dialogueIndex]);
+        //string newString = NameChanger(d.dialogue[dialogueIndex]);
 
-        textUi.text = newString;
+        //textUi.text = newString;
     }
 
     public string NameChanger(string s)
