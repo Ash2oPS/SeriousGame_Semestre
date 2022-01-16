@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevitationAnimation : MonoBehaviour
 {
     private Transform tf;
+    private DialogueManager dm;
     public float timer = 0f;
     public float baseX = 0f;
     public float baseY = 0f;
@@ -16,6 +17,7 @@ public class LevitationAnimation : MonoBehaviour
     private void Start()
     {
         tf = transform;
+        dm = FindObjectOfType<DialogueManager>();
         baseX = tf.position.x;
         baseY = tf.position.y;
         baseZ = tf.position.z;
@@ -23,19 +25,22 @@ public class LevitationAnimation : MonoBehaviour
 
     private void Update()
     {
-        newY = baseY + Mathf.Sin(timer * frequency) * amplitude;
-
-        if (gameObject.layer == 5)
+        if (dm.talkingCharacter == Character.none)
         {
-            RectTransform rt = GetComponent<RectTransform>();
+            newY = baseY + Mathf.Sin(timer * frequency) * amplitude;
 
-            rt.position = new Vector3(baseX, newY, baseZ);
-        }
-        else
-        {
-            tf.position = new Vector3(baseX, newY, baseZ);
-        }
+            if (gameObject.layer == 5)
+            {
+                RectTransform rt = GetComponent<RectTransform>();
 
-        timer += Time.deltaTime;
+                rt.position = new Vector3(baseX, newY, baseZ);
+            }
+            else
+            {
+                tf.position = new Vector3(baseX, newY, baseZ);
+            }
+
+            timer += Time.deltaTime;
+        }
     }
 }

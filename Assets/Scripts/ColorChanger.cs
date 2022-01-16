@@ -12,11 +12,10 @@ public class ColorChanger : MonoBehaviour
         if (newColor == 0)
         {
             sr.color = Color.white;
-        } else if (newColor == 1)
+        }
+        else if (newColor == 1)
         {
             sr.color = Color.yellow;
         }
-
     }
-
 }
