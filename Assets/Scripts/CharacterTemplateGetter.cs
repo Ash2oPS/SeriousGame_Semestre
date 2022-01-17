@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class CharacterTemplateGetter : MonoBehaviour
 {
     public CharacterTemplate charTemplate;
     private SpriteRenderer characterSprite;
     private LevitationAnimation iconSprite;
 
-    private void Update()
+    private void Start()
     {
         {
             characterSprite = gameObject.transform.Find("CharacterSprite").GetComponent<SpriteRenderer>();

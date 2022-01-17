@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public Text textUi = null;
     public int dialogueIndex = 0;
     public Dialogue[] allDialogues;
+    public CharacterTemplate charaTemplate;
     public Character talkingCharacter;
 
     // Start is called before the first frame update
@@ -371,18 +372,15 @@ public class DialogueManager : MonoBehaviour
 
     public void DialogueBegin()
     {
-        /*
-        talkingCharacter = (Character)CharacterClicked;
         Dialogue d = DialoguePicker();
         if (!isDialogueOn)
         {
             isDialogueOn = true;
             dialogueUI.enabled = true;
             dialogueIndex = 0;
-            string newString = NameChanger(d.dialogue[dialogueIndex]);
+            string newString = NameChanger(d.dialogue[dialogueIndex].replique);
             textUi.text = newString;
         }
-        */
     }
 
     public void NextString()

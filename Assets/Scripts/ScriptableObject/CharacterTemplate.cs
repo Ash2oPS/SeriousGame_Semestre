@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class CharacterTemplate : ScriptableObject
 {
+    public Character character;
     public string nomDuPerso;
     public Sprite idleSprite;
     public float taille;

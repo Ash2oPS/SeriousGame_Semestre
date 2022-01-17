@@ -21,22 +21,31 @@ public class BlurManager : MonoBehaviour
 
     private void Update()
     {
-        if (dm.talkingCharacter == Character.none && dof.focusDistance.value <= 3)
+        if (dm.talkingCharacter == Character.none && dof.focusDistance.value < 3)
         {
+            if (t < 1)
+            {
+                t += Time.deltaTime * speed / 10;
+            }
+            else
+            {
+                t = 0;
+            }
+
             dof.focusDistance.value = Mathf.Lerp(0.8f, 3, t);
         }
-        else if (dm.talkingCharacter != Character.none && dof.focusDistance.value >= 0.8)
+        else if (dm.talkingCharacter != Character.none && dof.focusDistance.value > 0.8)
         {
-            dof.focusDistance.value = Mathf.Lerp(3, 0.8f, t);
-        }
+            if (t < 1)
+            {
+                t += Time.deltaTime * speed / 10;
+            }
+            else
+            {
+                t = 0;
+            }
 
-        if (t < 1)
-        {
-            t += Time.deltaTime * speed / 10;
-        }
-        else
-        {
-            t = 0;
+            dof.focusDistance.value = Mathf.Lerp(3, 0.8f, t);
         }
     }
 }

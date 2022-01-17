@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 8312214329335700577}
   - component: {fileID: 4790236803513159863}
   - component: {fileID: 1391138901440860969}
+  - component: {fileID: 972457051470684675}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -290,6 +291,18 @@ MonoBehaviour:
   _onClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 972457051470684675}
+        m_TargetAssemblyTypeName: ClickOnCharacter, Assembly-CSharp
+        m_MethodName: click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 294497941965140183, guid: 33387c856e9aa18469228844f4a05eb0, type: 3}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: DialogueBegin
@@ -348,6 +361,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charTemplate: {fileID: 0}
+--- !u!114 &972457051470684675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6652647107363711588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce56db242f845364f88cc9866153112a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 0}
+  charTemp: {fileID: 0}
+  charTempGetter: {fileID: 0}
 --- !u!1 &9192642321380052021
 GameObject:
   m_ObjectHideFlags: 0
