@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05fa8477378817b4cafe732ebc7fa711, type: 3}
   m_Name: Louis_char
   m_EditorClassIdentifier: 
+  character: 5
   nomDuPerso: Louis
   idleSprite: {fileID: 21300000, guid: f1daf689d2e087542a2a4b3fd3724399, type: 3}
   taille: 1.35
@@ -25,3 +26,9 @@ MonoBehaviour:
   nbSeqRes3: 0
   fin: 0
   voice: []
+  defaultDialogue: {fileID: 11400000, guid: b90e8121ac5207a40a03157175f0c0c8, type: 2}
+  dialogueChoiceBySwitches:
+  - _switchIDs: 
+    _dialogue: {fileID: 0}
+  - _switchIDs: 
+    _dialogue: {fileID: 0}

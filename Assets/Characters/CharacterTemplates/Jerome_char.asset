@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05fa8477378817b4cafe732ebc7fa711, type: 3}
   m_Name: Jerome_char
   m_EditorClassIdentifier: 
+  character: 1
   nomDuPerso: "J\xE9r\xF4me"
   idleSprite: {fileID: 21300000, guid: 5a8dae5df1fcd6246b4dffe866627e69, type: 3}
   taille: 0.8

@@ -11,4 +11,8 @@ public class CharacterTemplate : ScriptableObject
     public float taille;
     public int characterEnumInt, nbSeqIntro, nbSeqInv1, nbSeqRes1, nbSeqInv2, nbSeqRes2, nbSeqInv3, nbSeqRes3, fin;
     public List<AudioClip> voice;
+
+    public Dialogue defaultDialogue;
+    public DialogueChoiceBySwitch[] dialogueChoiceBySwitches;
+
 }

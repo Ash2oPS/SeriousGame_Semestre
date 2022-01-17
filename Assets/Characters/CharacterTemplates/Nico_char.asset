@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05fa8477378817b4cafe732ebc7fa711, type: 3}
   m_Name: Nico_char
   m_EditorClassIdentifier: 
+  character: 4
   nomDuPerso: Nico
   idleSprite: {fileID: 21300000, guid: ab08396ef454abe4ba35474d6aaff3fc, type: 3}
   taille: 1.6

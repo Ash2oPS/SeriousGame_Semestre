@@ -19,7 +19,7 @@ public class ClickOnCharacter : MonoBehaviour
     {
         if (dm.talkingCharacter == Character.none)
         {
-            dm.talkingCharacter = charTemp.character;
+            dm.DialogueBegin(charTemp);
         }
     }
 }

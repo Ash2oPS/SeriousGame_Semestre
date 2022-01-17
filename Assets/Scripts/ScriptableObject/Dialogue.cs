@@ -6,4 +6,5 @@ using UnityEngine;
 public class Dialogue : ScriptableObject
 {
     public Dialogue_Struct[] dialogue;
+    public string switchToSetToTrue;
 }
