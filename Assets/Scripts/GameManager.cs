@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public Room currentRoom;
 
+    [SerializeField]
+    private bool Debug;
+
     private void Start()
     {
         currentRoom = Room.room1;
