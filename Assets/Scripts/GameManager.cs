@@ -6,8 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public Room currentRoom;
 
-    [SerializeField]
-    private bool Debug;
+    public bool Debug;
 
     private void Start()
     {
