@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public bool isDialogueOn = false;
     public Canvas dialogueUI = null;
-    public TextMeshProUGUI textUI, textUIShadow,nameUI, nameUIShadow;
+    public TextMeshProUGUI textUI, textUIShadow, nameUI, nameUIShadow;
     public int dialogueIndex = 0;
     public Dialogue[] allDialogues;
     private Dialogue currentDialogue;
@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DialoguePicker()
     {
-        for (int i = charaTemplate.dialogueChoiceBySwitches.Length-1; i >= 0; i--)
+        for (int i = charaTemplate.dialogueChoiceBySwitches.Length - 1; i >= 0; i--)
         {
             var dcs = charaTemplate.dialogueChoiceBySwitches[i];
             if (switchMan.CheckSwitch(dcs._switchIDs))
@@ -49,12 +49,11 @@ public class DialogueManager : MonoBehaviour
 
     public void DialogueBegin(CharacterTemplate ct)
     {
-
         charaTemplate = ct;
         DialoguePicker();
+        talkingCharacter = ct.character;
         if (!isDialogueOn)
         {
-            //ima
             isDialogueOn = true;
             dialogueUI.enabled = true;
             dialogueIndex = 0;
@@ -76,7 +75,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
     public void DialogueEnd()
     {
         if (isDialogueOn)
@@ -86,7 +84,6 @@ public class DialogueManager : MonoBehaviour
 
             DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
             switchMan.SetSwitch(currentDialogue.switchToSetToTrue, true);
-
         }
     }
 }
