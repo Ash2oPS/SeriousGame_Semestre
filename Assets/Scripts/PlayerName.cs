@@ -16,13 +16,18 @@ public class PlayerName : MonoBehaviour
         dm.isDialogueOn = true;
     }
 
-    private void Valider()
+    public void Valider()
     {
         dm = FindObjectOfType<DialogueManager>();
         inputField = transform.Find("InputField").GetComponent<TMP_InputField>();
         gm = FindObjectOfType<GameManager>();
         string nameInField = inputField.text;
 
-        gm.name = nameInField;
+        if (nameInField != "")
+        {
+            gm.playerName = nameInField;
+            dm.isDialogueOn = false;
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -17,7 +17,7 @@ public class ClickOnCharacter : MonoBehaviour
 
     public void click()
     {
-        if (dm.talkingCharacter == Character.none)
+        if (!dm.isDialogueOn)
         {
             dm.DialogueBegin(charTemp);
         }

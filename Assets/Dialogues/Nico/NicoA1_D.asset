@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - quiParle: 8
     emotionDuPerso: 0
-    replique: Bonjour votre honneur, je suis l'inspecteur Player.
+    replique: Bonjour votre honneur, je suis l'inspecteur @.
     animation: 0
     evenement: 1
     persoEvenement: 4
@@ -31,3 +31,4 @@ MonoBehaviour:
     animation: 0
     evenement: 0
     persoEvenement: 0
+  switchToSetToTrue: 

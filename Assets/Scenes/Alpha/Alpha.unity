@@ -711,14 +711,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 5
   m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 5
   m_RegexValue: 
   m_GlobalPointSize: 14
   m_CharacterLimit: 10
@@ -986,6 +986,32 @@ MonoBehaviour:
   switches:
   - id: 
     value: 0
+--- !u!114 &568250448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568250446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52878d9179bdf4b4fada1e402b869033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &568250451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568250446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaef85e8d8083c84499720bffb3e2a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWriting: 0
+  speed: 25
 --- !u!1001 &615272173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2783,7 +2809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1840244020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 410597283}
+        m_TargetAssemblyTypeName: PlayerName, Assembly-CSharp
+        m_MethodName: Valider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1840244020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3606,9 +3644,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7768767013421731491}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 568250451}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EndWait
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TextWriter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863174259208872281, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5172864004059400411, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
       propertyPath: m_fontColorGradient.bottomLeft.b
       value: 0.6698469

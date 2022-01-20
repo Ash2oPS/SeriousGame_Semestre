@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     public Character talkingCharacter;
     public SwitchManager switchMan;
     private GameManager gm;
+    private PlayerNameInDialogue playerNameInDial;
+    private TextWriter txtWriter;
 
     // Start is called before the first frame update
     private void Awake()
@@ -30,12 +32,13 @@ public class DialogueManager : MonoBehaviour
         }
 
         gm = FindObjectOfType<GameManager>();
+        playerNameInDial = FindObjectOfType<PlayerNameInDialogue>();
+        txtWriter = FindObjectOfType<TextWriter>();
 
         if (dialogueUI != null)
         {
             dialogueUI.enabled = false;
         }
-
     }
 
     private void DialoguePicker()
@@ -67,50 +70,64 @@ public class DialogueManager : MonoBehaviour
 
     public void NextString()
     {
-        switch (currentDialogue.dialogue[dialogueIndex].quiParle)
+        if (!txtWriter.isWriting)
         {
-            case Character.axel:
-                nameUI.text = "Axel";
-                nameUIShadow.text = "Axel";
-                break;
-            case Character.jerome:
-                nameUI.text = "Jérôme";
-                nameUIShadow.text = "Jérôme";
-                break;
-            case Character.louis:
-                nameUI.text = "Louis";
-                nameUIShadow.text = "Louis";
-                break;
-            case Character.nathalie:
-                nameUI.text = "Nathalie";
-                nameUIShadow.text = "Nathalie";
-                break;
-            case Character.nico:
-                nameUI.text = "Nico";
-                nameUIShadow.text = "Nico";
-                break;
-            case Character.selene:
-                nameUI.text = "Selene";
-                nameUIShadow.text = "Selene";
-                break;
-            case Character.thibault:
-                nameUI.text = "Thibault";
-                nameUIShadow.text = "Thibault";
-                break;
-            case Character.player:
-                nameUI.text = gm.playerName;
-                nameUIShadow.text = gm.playerName;
-                break;
-        }
+            switch (currentDialogue.dialogue[dialogueIndex].quiParle)
+            {
+                case Character.axel:
+                    nameUI.text = "Axel";
+                    nameUIShadow.text = "Axel";
+                    break;
 
-        
-        textUI.text = currentDialogue.dialogue[dialogueIndex].replique;
-        textUIShadow.text = currentDialogue.dialogue[dialogueIndex].replique;
-        dialogueIndex++;
-        if (dialogueIndex + 1 > currentDialogue.dialogue.Length)
+                case Character.jerome:
+                    nameUI.text = "Jérôme";
+                    nameUIShadow.text = "Jérôme";
+                    break;
+
+                case Character.louis:
+                    nameUI.text = "Louis";
+                    nameUIShadow.text = "Louis";
+                    break;
+
+                case Character.nathalie:
+                    nameUI.text = "Nathalie";
+                    nameUIShadow.text = "Nathalie";
+                    break;
+
+                case Character.nico:
+                    nameUI.text = "Nico";
+                    nameUIShadow.text = "Nico";
+                    break;
+
+                case Character.selene:
+                    nameUI.text = "Selene";
+                    nameUIShadow.text = "Selene";
+                    break;
+
+                case Character.thibault:
+                    nameUI.text = "Thibault";
+                    nameUIShadow.text = "Thibault";
+                    break;
+
+                case Character.player:
+                    nameUI.text = gm.playerName;
+                    nameUIShadow.text = gm.playerName;
+                    break;
+            }
+
+            string replique = currentDialogue.dialogue[dialogueIndex].replique;
+            replique = playerNameInDial.CheckAndReplace(replique);
+            StartCoroutine(txtWriter.Write(replique, textUI, textUIShadow));
+            dialogueIndex++;
+            if (dialogueIndex + 1 > currentDialogue.dialogue.Length)
+            {
+                DialogueEnd();
+                return;
+            }
+        }
+        else
         {
-            DialogueEnd();
-            return;
+            txtWriter.EndWait();
         }
     }
 

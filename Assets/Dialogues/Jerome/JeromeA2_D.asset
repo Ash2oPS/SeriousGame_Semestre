@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - quiParle: 1
     emotionDuPerso: 0
-    replique: "Oui bah \xE7a va, on se connait."
+    replique: "Oui bah \xE7a va, on se connait.#5,5#\nSaucisse."
     animation: 0
     evenement: 1
     persoEvenement: 1
@@ -25,3 +25,4 @@ MonoBehaviour:
     animation: 0
     evenement: 0
     persoEvenement: 0
+  switchToSetToTrue: 
