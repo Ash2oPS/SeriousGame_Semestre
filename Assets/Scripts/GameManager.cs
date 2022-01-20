@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Room currentRoom;
-    public string playerName;
+    public string playerName = "défaut";
     public bool Debug;
 
     private DialogueManager dm;
@@ -13,10 +13,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        playerNameScript = GetComponent<PlayerName>();
+        playerNameScript = FindObjectOfType<PlayerName>();
         dm = FindObjectOfType<DialogueManager>();
         currentRoom = Room.room1;
 
-        playerName = playerNameScript.Enter();
+        playerNameScript.Enter();
     }
 }

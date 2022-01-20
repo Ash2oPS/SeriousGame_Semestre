@@ -1,17 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerName : MonoBehaviour
-{ 
-    public string Enter()
+{
+    private DialogueManager dm;
+    private GameManager gm;
+    private TMP_InputField inputField;
+    private string newName;
+
+    public void Enter()
     {
-        string newName = "Votre Nom";
-        DialogueManager dm = FindObjectOfType<DialogueManager>();
-
+        dm = FindObjectOfType<DialogueManager>();
         dm.isDialogueOn = true;
+    }
 
+    private void Valider()
+    {
+        dm = FindObjectOfType<DialogueManager>();
+        inputField = transform.Find("InputField").GetComponent<TMP_InputField>();
+        gm = FindObjectOfType<GameManager>();
+        string nameInField = inputField.text;
 
-        return newName;
+        gm.name = nameInField;
     }
 }
