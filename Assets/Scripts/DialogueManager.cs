@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     private CharacterTemplate charaTemplate;
     public Character talkingCharacter;
     public SwitchManager switchMan;
+    private GameManager gm;
 
     // Start is called before the first frame update
     private void Awake()
@@ -28,10 +29,13 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        gm = FindObjectOfType<GameManager>();
+
         if (dialogueUI != null)
         {
             dialogueUI.enabled = false;
         }
+
     }
 
     private void DialoguePicker()
@@ -63,8 +67,43 @@ public class DialogueManager : MonoBehaviour
 
     public void NextString()
     {
-        nameUI.text = currentDialogue.dialogue[dialogueIndex].quiParle.ToString();
-        nameUIShadow.text = currentDialogue.dialogue[dialogueIndex].quiParle.ToString();
+        switch (currentDialogue.dialogue[dialogueIndex].quiParle)
+        {
+            case Character.axel:
+                nameUI.text = "Axel";
+                nameUIShadow.text = "Axel";
+                break;
+            case Character.jerome:
+                nameUI.text = "Jérôme";
+                nameUIShadow.text = "Jérôme";
+                break;
+            case Character.louis:
+                nameUI.text = "Louis";
+                nameUIShadow.text = "Louis";
+                break;
+            case Character.nathalie:
+                nameUI.text = "Nathalie";
+                nameUIShadow.text = "Nathalie";
+                break;
+            case Character.nico:
+                nameUI.text = "Nico";
+                nameUIShadow.text = "Nico";
+                break;
+            case Character.selene:
+                nameUI.text = "Selene";
+                nameUIShadow.text = "Selene";
+                break;
+            case Character.thibault:
+                nameUI.text = "Thibault";
+                nameUIShadow.text = "Thibault";
+                break;
+            case Character.player:
+                nameUI.text = gm.playerName;
+                nameUIShadow.text = gm.playerName;
+                break;
+        }
+
+        
         textUI.text = currentDialogue.dialogue[dialogueIndex].replique;
         textUIShadow.text = currentDialogue.dialogue[dialogueIndex].replique;
         dialogueIndex++;
@@ -81,6 +120,7 @@ public class DialogueManager : MonoBehaviour
         {
             isDialogueOn = false;
             dialogueUI.enabled = false;
+            talkingCharacter = Character.none;
 
             DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
             switchMan.SetSwitch(currentDialogue.switchToSetToTrue, true);

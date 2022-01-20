@@ -28,7 +28,7 @@ public class DebugText : MonoBehaviour
     {
         if (gm.Debug)
         {
-            tmproDebug.text = "Current talking : " + dm.talkingCharacter + "\nisDialogueOn : " + dm.isDialogueOn;
+            tmproDebug.text = "Current talking : " + dm.talkingCharacter + "\nisDialogueOn : " + dm.isDialogueOn + gm.playerName;
         }
     }
 }

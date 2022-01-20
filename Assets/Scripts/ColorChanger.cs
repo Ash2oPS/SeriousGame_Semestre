@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
 {
-    public SpriteRenderer sr;
+    private DialogueManager dm; 
+    private SpriteRenderer sr;
+
+    private void Start()
+    {
+        dm = FindObjectOfType<DialogueManager>();
+        sr = GetComponent<SpriteRenderer>();   
+    }
 
     public void ChangeColor(int newColor)
     {
-        sr = GetComponent<SpriteRenderer>();
         if (newColor == 0)
         {
             sr.color = Color.white;
         }
-        else if (newColor == 1)
+        else if (newColor == 1 && !dm.isDialogueOn)
         {
             sr.color = Color.yellow;
+        }
+    }
+
+    private void Update()
+    {
+        if (dm.isDialogueOn)
+        {
+            sr.color = Color.white;
         }
     }
 }

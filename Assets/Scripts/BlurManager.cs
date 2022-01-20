@@ -18,11 +18,13 @@ public class BlurManager : MonoBehaviour
         dm = FindObjectOfType<DialogueManager>();
         vp = GetComponent<Volume>().profile;
         vp.TryGet<DepthOfField>(out dof);
+
+        isUp = false;
     }
 
     private void Update()
     {
-        if (dm.talkingCharacter == Character.none && isUp)
+        if (!dm.isDialogueOn && isUp)
         {
             if (t < 1)
             {
@@ -35,7 +37,7 @@ public class BlurManager : MonoBehaviour
                 isUp = false;
             }
         }
-        else if (dm.talkingCharacter != Character.none && !isUp)
+        else if (dm.isDialogueOn && !isUp)
         {
             if (t < 1)
             {
