@@ -5,54 +5,70 @@ using TMPro;
 
 public class TextWriter : MonoBehaviour
 {
+    public float timeBetweenChars;
+    public string replique, ceQuiEstEcrit;
     public bool isWriting;
 
-    [SerializeField]
-    private float speed = 10;
-
-    private float timeToWait = 0;
+    private int currentIndex;
+    private float timeToWait, timer, baseSpeed;
     private bool hasToStop = false;
     private DialogueManager dm;
+    private TextMeshProUGUI tmp1, tmp2;
 
-    public IEnumerator Write(string replique, TextMeshProUGUI tmp1, TextMeshProUGUI tmp2)
+    private void Start()
     {
-        float baseSpeed = speed;
-        string ceQuiEstEcrit = "";
-        for (int i = 0; i < replique.Length; i++)
+        baseSpeed = timeBetweenChars;
+        currentIndex = 0;
+    }
+
+    public void Update()
+    {
+        if (isWriting)
         {
-            if (hasToStop)
+            if (!hasToStop)
             {
-                yield break;
-
-                replique = WaitChecker(replique, i);
-                ceQuiEstEcrit += replique[i];
-                tmp1.text = ceQuiEstEcrit;
-                tmp2.text = ceQuiEstEcrit;
-
-                speed = baseSpeed;
-                timeToWait = 0;
+                if (timer >= timeBetweenChars && currentIndex < replique.Length)
+                {
+                    timeToWait = 0;
+                    timer = 0;
+                    timeBetweenChars = baseSpeed;
+                    replique = WaitChecker(replique, currentIndex);
+                    ceQuiEstEcrit += replique[currentIndex];
+                    tmp1.text = ceQuiEstEcrit;
+                    tmp2.text = ceQuiEstEcrit;
+                    currentIndex++;
+                }
+                else if (timer < timeBetweenChars)
+                {
+                    timer += Time.deltaTime;
+                }
+                else if (currentIndex >= replique.Length)
+                {
+                    isWriting = false;
+                }
             }
             else
             {
-                replique = WaitChecker(replique, i);
-                ceQuiEstEcrit += replique[i];
-                tmp1.text = ceQuiEstEcrit;
-                tmp2.text = ceQuiEstEcrit;
-
-                if (timeToWait == 0)
-                {
-                    yield return new WaitForSeconds(1 / speed);
-                }
-                else
-                {
-                    yield return new WaitForSeconds(timeToWait);
-                }
-
-                speed = baseSpeed;
                 timeToWait = 0;
+                timer = 0;
+                timeBetweenChars = baseSpeed;
+                for (int i = 0; i < replique.Length; i++)
+                {
+                    if (replique[i] == '#')
+                    {
+                        replique = WaitChecker(replique, i);
+                    }
+                }
+                tmp1.text = replique;
+                tmp2.text = replique;
+                isWriting = false;
+                hasToStop = false;
+                ceQuiEstEcrit = "";
+                timeBetweenChars = baseSpeed;
+                timer = 0;
+                currentIndex = 0;
             }
         }
-        isWriting = false;
     }
 
     private string WaitChecker(string replique, int index)
@@ -76,13 +92,25 @@ public class TextWriter : MonoBehaviour
                     }
                 }
             }
-            Debug.Log(timeToWaitString);
             timeToWait = float.Parse(timeToWaitString);
+            timeBetweenChars = timeToWait;
             stringToRemove += '#';
             replique = replique.Replace(stringToRemove, "");
         }
 
         return replique;
+    }
+
+    public void StartWriting(string rep, TextMeshProUGUI tmpugui1, TextMeshProUGUI tmpugui2)
+    {
+        replique = rep;
+        tmp1 = tmpugui1;
+        tmp2 = tmpugui2;
+        ceQuiEstEcrit = "";
+        timeBetweenChars = baseSpeed;
+        isWriting = true;
+        timer = 0;
+        currentIndex = 0;
     }
 
     public void EndWait()

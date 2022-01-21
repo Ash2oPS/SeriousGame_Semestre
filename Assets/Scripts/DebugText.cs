@@ -8,11 +8,13 @@ public class DebugText : MonoBehaviour
     private GameManager gm;
     private DialogueManager dm;
     private TextMeshProUGUI tmproDebug;
+    private TextWriter txtWriter;
 
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
         tmproDebug = transform.Find("DebugText").GetComponent<TextMeshProUGUI>();
+        txtWriter = FindObjectOfType<TextWriter>();
 
         if (!gm.Debug)
         {
@@ -28,7 +30,7 @@ public class DebugText : MonoBehaviour
     {
         if (gm.Debug)
         {
-            tmproDebug.text = "Current talking : " + dm.talkingCharacter + "\nisDialogueOn : " + dm.isDialogueOn + gm.playerName;
+            tmproDebug.text = "Current talking : " + dm.talkingCharacter + "\nisDialogueOn : " + dm.isDialogueOn + "\n\ntimeBetweenChars : " + txtWriter.timeBetweenChars;
         }
     }
 }

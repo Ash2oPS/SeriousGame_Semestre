@@ -56,73 +56,39 @@ public class DialogueManager : MonoBehaviour
 
     public void DialogueBegin(CharacterTemplate ct)
     {
+        TextBoxesZero();
         charaTemplate = ct;
         DialoguePicker();
         talkingCharacter = ct.character;
+        NamePicker();
         if (!isDialogueOn)
         {
             isDialogueOn = true;
             dialogueUI.enabled = true;
             dialogueIndex = 0;
+            string replique = currentDialogue.dialogue[dialogueIndex].replique;
+            replique = playerNameInDial.CheckAndReplace(replique);
+            txtWriter.StartWriting(replique, textUI, textUIShadow);
         }
-        NextString();
     }
 
     public void NextString()
     {
         if (!txtWriter.isWriting)
         {
-            switch (currentDialogue.dialogue[dialogueIndex].quiParle)
-            {
-                case Character.axel:
-                    nameUI.text = "Axel";
-                    nameUIShadow.text = "Axel";
-                    break;
-
-                case Character.jerome:
-                    nameUI.text = "Jérôme";
-                    nameUIShadow.text = "Jérôme";
-                    break;
-
-                case Character.louis:
-                    nameUI.text = "Louis";
-                    nameUIShadow.text = "Louis";
-                    break;
-
-                case Character.nathalie:
-                    nameUI.text = "Nathalie";
-                    nameUIShadow.text = "Nathalie";
-                    break;
-
-                case Character.nico:
-                    nameUI.text = "Nico";
-                    nameUIShadow.text = "Nico";
-                    break;
-
-                case Character.selene:
-                    nameUI.text = "Selene";
-                    nameUIShadow.text = "Selene";
-                    break;
-
-                case Character.thibault:
-                    nameUI.text = "Thibault";
-                    nameUIShadow.text = "Thibault";
-                    break;
-
-                case Character.player:
-                    nameUI.text = gm.playerName;
-                    nameUIShadow.text = gm.playerName;
-                    break;
-            }
-
-            string replique = currentDialogue.dialogue[dialogueIndex].replique;
-            replique = playerNameInDial.CheckAndReplace(replique);
-            StartCoroutine(txtWriter.Write(replique, textUI, textUIShadow));
-            dialogueIndex++;
-            if (dialogueIndex + 1 > currentDialogue.dialogue.Length)
+            TextBoxesZero();
+            if (dialogueIndex + 1 >= currentDialogue.dialogue.Length)
             {
                 DialogueEnd();
                 return;
+            }
+            else
+            {
+                dialogueIndex++;
+                string replique = currentDialogue.dialogue[dialogueIndex].replique;
+                replique = playerNameInDial.CheckAndReplace(replique);
+                NamePicker();
+                txtWriter.StartWriting(replique, textUI, textUIShadow);
             }
         }
         else
@@ -135,12 +101,67 @@ public class DialogueManager : MonoBehaviour
     {
         if (isDialogueOn)
         {
+            dialogueIndex = 0;
             isDialogueOn = false;
             dialogueUI.enabled = false;
             talkingCharacter = Character.none;
-
+            TextBoxesZero();
             DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
             switchMan.SetSwitch(currentDialogue.switchToSetToTrue, true);
         }
+    }
+
+    private void NamePicker()
+    {
+        switch (currentDialogue.dialogue[dialogueIndex].quiParle)
+        {
+            case Character.axel:
+                nameUI.text = "Axel";
+                nameUIShadow.text = "Axel";
+                break;
+
+            case Character.jerome:
+                nameUI.text = "Jérôme";
+                nameUIShadow.text = "Jérôme";
+                break;
+
+            case Character.louis:
+                nameUI.text = "Louis";
+                nameUIShadow.text = "Louis";
+                break;
+
+            case Character.nathalie:
+                nameUI.text = "Nathalie";
+                nameUIShadow.text = "Nathalie";
+                break;
+
+            case Character.nico:
+                nameUI.text = "Nico";
+                nameUIShadow.text = "Nico";
+                break;
+
+            case Character.selene:
+                nameUI.text = "Selene";
+                nameUIShadow.text = "Selene";
+                break;
+
+            case Character.thibault:
+                nameUI.text = "Thibault";
+                nameUIShadow.text = "Thibault";
+                break;
+
+            case Character.player:
+                nameUI.text = gm.playerName;
+                nameUIShadow.text = gm.playerName;
+                break;
+        }
+    }
+
+    private void TextBoxesZero()
+    {
+        textUI.text = "";
+        textUIShadow.text = "";
+        nameUI.text = "";
+        nameUIShadow.text = "";
     }
 }
