@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af149f282798f864194b4c864a876edf, type: 3}
+  m_Name: SeleneA1_D
+  m_EditorClassIdentifier: 
+  dialogue:
+  - quiParle: 7
+    emotionDuPerso: 0
+    replique: "Oulah ah oui, c'est vrai, vous \xEAtes l\xE0 !"
+    animation: 0
+    evenement: 1
+    persoEvenement: 7
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: Oui
+    animation: 0
+    evenement: 0
+    persoEvenement: 0
+  switchToSetToTrue: presentationSelene

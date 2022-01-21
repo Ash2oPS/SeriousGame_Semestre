@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Room currentRoom;
+    public string playerName = "défaut";
+    public bool Debug;
 
-    // Update is called once per frame
-    void Update()
+    private DialogueManager dm;
+    private PlayerName playerNameScript;
+
+    private void Start()
     {
-        
+        playerNameScript = FindObjectOfType<PlayerName>();
+        dm = FindObjectOfType<DialogueManager>();
+        currentRoom = Room.room1;
+
+        playerNameScript.Enter();
     }
 }

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af149f282798f864194b4c864a876edf, type: 3}
+  m_Name: NathalieA1_D
+  m_EditorClassIdentifier: 
+  dialogue:
+  - quiParle: 2
+    emotionDuPerso: 0
+    replique: "Bonjour monsieur, vous devez \xEAtre l'enqu\xEAteur qui s'occupe du
+      vol de la tapisserie#0,5#, c'est bien cela ?"
+    animation: 0
+    evenement: 1
+    persoEvenement: 2
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: "Oui, c'est \xE7a, je suis..."
+    animation: 0
+    evenement: 0
+    persoEvenement: 0
+  - quiParle: 2
+    emotionDuPerso: 1
+    replique: Super, allez hop, occupez-vous bien de tout cela, on a besoin de cette
+      tapisserie, oulalah.
+    animation: 0
+    evenement: 0
+    persoEvenement: 0
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: Okiii.
+    animation: 0
+    evenement: 0
+    persoEvenement: 0
+  switchToSetToTrue: presentationNathalie

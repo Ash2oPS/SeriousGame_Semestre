@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 967107000046706620}
   - component: {fileID: 5333830564123309369}
-  - component: {fileID: 3557022975538512420}
   - component: {fileID: 294497941965140183}
   m_Layer: 0
   m_Name: -GM-
@@ -45,18 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa1d03ef8ac8ac4bbcc7ac4953f4888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3557022975538512420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6285359835311815465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efd3191aebf230243854946819fc4851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  currentRoom: 0
 --- !u!114 &294497941965140183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,3 +62,5 @@ MonoBehaviour:
   textUi: {fileID: 0}
   dialogueIndex: 0
   allDialogues: []
+  talkingCharacter: 0
+  switchMan: {fileID: 0}
