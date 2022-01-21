@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fa8477378817b4cafe732ebc7fa711, type: 3}
+  m_Name: Thibault_char
+  m_EditorClassIdentifier: 
+  character: 6
+  nomDuPerso: Thibault
+  idleSprite: {fileID: 21300000, guid: 7797e02d42533ca4abe87aaeb28904d9, type: 3}
+  idleSprite2: {fileID: 21300000, guid: 7876a3660c3111d44a4c484d53f475c5, type: 3}
+  taille: 0.6
+  spriteNeutre:
+    emotionName: 0
+    emotionSprite: {fileID: 21300000, guid: cc6c741175446884fa74fe1b638d0481, type: 3}
+  spriteHeureux:
+    emotionName: 1
+    emotionSprite: {fileID: 0}
+  spriteTrsite:
+    emotionName: 2
+    emotionSprite: {fileID: 0}
+  spriteReflexion:
+    emotionName: 3
+    emotionSprite: {fileID: 21300000, guid: ba1d0aba200fa7e49b4dab4c8d38af90, type: 3}
+  spriteColere:
+    emotionName: 4
+    emotionSprite: {fileID: 0}
+  spriteInquiet:
+    emotionName: 5
+    emotionSprite: {fileID: 21300000, guid: 93dd0b21e0ba6674a8ca042dc0774a15, type: 3}
+  spriteIntrigue:
+    emotionName: 6
+    emotionSprite: {fileID: 0}
+  spriteSurpris:
+    emotionName: 7
+    emotionSprite: {fileID: 0}
+  spriteCursed:
+    emotionName: 8
+    emotionSprite: {fileID: 21300000, guid: a3e4c6d3ee341e5448c28c51c1516c8c, type: 3}
+  voice: []
+  defaultDialogue: {fileID: 11400000, guid: 5153ff190d575a641bccdcad8815dfa4, type: 2}
+  dialogueChoiceBySwitches:
+  - _switchIDs: presentationThibault
+    _dialogue: {fileID: 11400000, guid: 975fea97efb12d84db742dbd44db7360, type: 2}

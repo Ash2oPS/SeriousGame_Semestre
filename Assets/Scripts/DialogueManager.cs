@@ -1,20 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-
     public bool isDialogueOn = false;
     public Canvas dialogueUI = null;
-    public Text textUi = null;
+    public Image persoUI1, persoUI2, persoUI3;
+    public Sprite invisiSprite;
+    public TextMeshProUGUI textUI, textUIShadow, nameUI, nameUIShadow;
     public int dialogueIndex = 0;
     public Dialogue[] allDialogues;
-    public string talkingCharacter;
+    private Dialogue currentDialogue;
+    private CharacterTemplate charaTemplate;
+
+    [SerializeField]
+    private CharacterTemplate[] allCharaTemplates;
+
+    public Character talkingCharacter;
+    public SwitchManager switchMan;
+    private GameManager gm;
+    private PlayerNameInDialogue playerNameInDial;
+    private TextWriter txtWriter;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         Canvas[] listOfCanvas = FindObjectsOfType<Canvas>();
         foreach (Canvas currentCanvas in listOfCanvas)
@@ -25,199 +37,250 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        gm = FindObjectOfType<GameManager>();
+        playerNameInDial = FindObjectOfType<PlayerNameInDialogue>();
+        txtWriter = FindObjectOfType<TextWriter>();
+
         if (dialogueUI != null)
         {
             dialogueUI.enabled = false;
         }
-
-        Text[] textsUi = FindObjectsOfType<Text>();
-        foreach(Text text in textsUi)
-        {
-            if(text.transform.name == "Dialogue_Text")
-            {
-                textUi = text;
-            }
-        }
     }
 
-    public Dialogue DialoguePicker(string character)
+    private void DialoguePicker()
     {
-        DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
-        Dialogue d = null;
-
-        if(character == "jerome")
+        for (int i = charaTemplate.dialogueChoiceBySwitches.Length - 1; i >= 0; i--)
         {
-            switch (dtp.nbJerome)
+            var dcs = charaTemplate.dialogueChoiceBySwitches[i];
+            if (switchMan.CheckSwitch(dcs._switchIDs))
             {
-                case 0:
-                    foreach(Dialogue dial in allDialogues)
-                    {                       
-                        if (dial.name == "Jerome1_DIAL")
-                        {
-                            d = dial;
-                        }
-                    }
-                    break;
-                case 1:
-                    foreach (Dialogue dial in allDialogues)
-                    {
-                        if (dial.name == "Jerome2_DIAL")
-                        {
-                            d = dial;
-                        }
-                    }
-                    break;
-                case 2:
-                    foreach (Dialogue dial in allDialogues)
-                    {
-                        if (dial.name == "Jerome3_DIAL")
-                        {
-                            d = dial;
-                        }
-                    }
-                    break;
-                case 3:
-                    foreach (Dialogue dial in allDialogues)
-                    {
-                        if (dial.name == "Jerome4_DIAL")
-                        {
-                            d = dial;
-                        }
-                    }
-                    break;
+                currentDialogue = dcs._dialogue;
+                return;
             }
         }
-        else
-        {
-            Debug.LogWarning(transform.name + ".DialoguePicker - string parametre de nom de perso incorrect.");
-        }
-        
-        return d;
+        currentDialogue = charaTemplate.defaultDialogue;
     }
 
-    public void DialogueBegin(string CharacterClicked)
+    public void DialogueBegin(CharacterTemplate ct)
     {
-        Dialogue d = DialoguePicker(CharacterClicked);
-        talkingCharacter = CharacterClicked;
+        TextBoxesZero();
+        ImagesZero();
+        charaTemplate = ct;
+        DialoguePicker();
+        talkingCharacter = ct.character;
+        NamePicker();
         if (!isDialogueOn)
         {
             isDialogueOn = true;
             dialogueUI.enabled = true;
             dialogueIndex = 0;
-            string newString = NameChanger(d.dialogue[dialogueIndex]);
-            textUi.text = newString;
+            string replique = currentDialogue.dialogue[dialogueIndex].replique;
+            replique = playerNameInDial.CheckAndReplace(replique);
+            AssignationImage(currentDialogue.dialogue[dialogueIndex].quiParle, currentDialogue.dialogue[dialogueIndex].emotionDuPerso, persoUI1);
+            txtWriter.StartWriting(replique, textUI, textUIShadow);
         }
     }
 
     public void NextString()
     {
-        
-        Dialogue d = DialoguePicker(talkingCharacter);
-
-        dialogueIndex++;
-        if(dialogueIndex + 1 > d.dialogue.Length)
+        if (!txtWriter.isWriting)
         {
-            DialogueEnd();
-            return;
-        }
-
-        string newString = NameChanger(d.dialogue[dialogueIndex]);
-
-        textUi.text = newString;
-    }
-
-    public string NameChanger(string s)
-    {
-        if (s[0] == '[')
-        {
-            char characterLetter = s[1];
-
-
-            if (characterLetter == 'P')                                         //PLAYER
+            TextBoxesZero();
+            if (dialogueIndex + 1 >= currentDialogue.dialogue.Length)
             {
-                s = s.Replace("[P]", "");
-
-                Text[] nameTexts = FindObjectsOfType<Text>();
-                foreach (Text nameText in nameTexts)
-                {
-                    if (nameText.transform.name == "Dialogue_NameText")
-                    {
-                        nameText.text = "Player";
-                        nameText.color = new Vector4(0, 0, 0, 1);
-                    }
-                }
-
-                Image[] allPortraits = FindObjectsOfType<Image>();
-                foreach (Image portrait in allPortraits)
-                {
-                    if (portrait.transform.tag == "Portrait") 
-                    {
-                        LevitationAnimation la = portrait.GetComponent<LevitationAnimation>();
-                        RectTransform rt = portrait.GetComponent<RectTransform>();
-                        la.frequency = 0f;
-                        la.amplitude = 0f;
-                        la.timer = 0f;
-                        rt.position = new Vector3(la.baseX, la.baseY, la.baseZ);
-                    }
-                }
+                DialogueEnd();
+                return;
             }
-
-            else if (characterLetter == 'J')                                     //JEROME
+            else
             {
-                s = s.Replace("[J]", "");
-
-                Text[] nameTexts = FindObjectsOfType<Text>();
-                foreach(Text nameText in nameTexts)
-                {
-                    if (nameText.transform.name == "Dialogue_NameText")
-                    {
-                        nameText.text = "Jérôme";
-                        nameText.color = new Vector4(0.4392157f, 0.5254902f, 0.6392157f, 1);
-                    }
-                }
-                Image[] portraits = FindObjectsOfType<Image>();
-                foreach (Image portrait in portraits)
-                {
-                    if (portrait.transform.tag == "Portrait")
-                    {
-                        if (portrait.sprite.name == "Jerome")
-                        {
-                            LevitationAnimation la = portrait.GetComponent<LevitationAnimation>();
-                            RectTransform rt = portrait.GetComponent<RectTransform>();
-                            la.frequency = 20f;
-                            la.amplitude = 5f;
-                        }
-                    }
-                }
+                dialogueIndex++;
+                string replique = currentDialogue.dialogue[dialogueIndex].replique;
+                replique = playerNameInDial.CheckAndReplace(replique);
+                NamePicker();
+                AssignationImage(currentDialogue.dialogue[dialogueIndex].quiParle, currentDialogue.dialogue[dialogueIndex].emotionDuPerso, persoUI1);
+                txtWriter.StartWriting(replique, textUI, textUIShadow);
             }
         }
-
-        return s;
+        else
+        {
+            txtWriter.EndWait();
+        }
     }
 
     public void DialogueEnd()
     {
         if (isDialogueOn)
         {
+            dialogueIndex = 0;
             isDialogueOn = false;
             dialogueUI.enabled = false;
-
+            talkingCharacter = Character.none;
+            TextBoxesZero();
+            ImagesZero();
             DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
-
-            if (talkingCharacter == "jerome")
-            {
-                if (talkingCharacter == "jerome" && dtp.nbJerome == 3)
-                {
-                    return;
-                }
-                else
-                {
-                    dtp.nbJerome++;
-                }
-            }
-            talkingCharacter = "";
-
+            switchMan.SetSwitch(currentDialogue.switchToSetToTrue, true);
         }
     }
 
+    private void NamePicker()
+    {
+        switch (currentDialogue.dialogue[dialogueIndex].quiParle)
+        {
+            case Character.axel:
+                nameUI.text = "Axel";
+                nameUIShadow.text = "Axel";
+                break;
+
+            case Character.jerome:
+                nameUI.text = "Jérôme";
+                nameUIShadow.text = "Jérôme";
+                break;
+
+            case Character.louis:
+                nameUI.text = "Louis";
+                nameUIShadow.text = "Louis";
+                break;
+
+            case Character.nathalie:
+                nameUI.text = "Nathalie";
+                nameUIShadow.text = "Nathalie";
+                break;
+
+            case Character.nico:
+                nameUI.text = "Nico";
+                nameUIShadow.text = "Nico";
+                break;
+
+            case Character.selene:
+                nameUI.text = "Selene";
+                nameUIShadow.text = "Selene";
+                break;
+
+            case Character.thibault:
+                nameUI.text = "Thibault";
+                nameUIShadow.text = "Thibault";
+                break;
+
+            case Character.player:
+                nameUI.text = gm.playerName;
+                nameUIShadow.text = gm.playerName;
+                break;
+        }
+    }
+
+    private void TextBoxesZero()
+    {
+        textUI.text = "";
+        textUIShadow.text = "";
+        nameUI.text = "";
+        nameUIShadow.text = "";
+    }
+
+    private void ImagesZero()
+    {
+        persoUI1.sprite = invisiSprite;
+        persoUI2.sprite = invisiSprite;
+        persoUI3.sprite = invisiSprite;
+    }
+
+    public void AssignationImage(Character talkingChar, Emotion currentEmotion, Image uiImageToChange)
+    {
+        if (talkingChar != Character.player)
+        {
+            CharacterTemplate CharacterTemplateToCheck = CharacterTemplateSelector(talkingChar);
+
+            switch (currentEmotion)
+            {
+                case Emotion.neutre:
+                    if (CharacterTemplateToCheck.spriteNeutre.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteNeutre.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.heureux:
+                    if (CharacterTemplateToCheck.spriteHeureux.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteHeureux.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.triste:
+                    if (CharacterTemplateToCheck.spriteTrsite.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteTrsite.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.reflexion:
+                    if (CharacterTemplateToCheck.spriteReflexion.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteReflexion.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.colere:
+                    if (CharacterTemplateToCheck.spriteColere.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteColere.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.inquiet:
+                    if (CharacterTemplateToCheck.spriteInquiet.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteInquiet.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.intrigue:
+                    if (CharacterTemplateToCheck.spriteIntrigue.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteIntrigue.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.surpris:
+                    if (CharacterTemplateToCheck.spriteSurpris.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteSurpris.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.cursed:
+                    if (CharacterTemplateToCheck.spriteCursed.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteCursed.emotionSprite;
+                    }
+                    break;
+
+                default:
+                    Debug.LogWarning("DialogueManager.AssignationImage - aucune image correspondante trouvée\ntalkingcharacter : " + talkingChar + "\ncurrentEmotion : " + currentEmotion + "\ncharacterTemplateToCheck : " + CharacterTemplateToCheck);
+                    break;
+            }
+        }
+    }
+
+    public CharacterTemplate CharacterTemplateSelector(Character characterEnum)
+    {
+        CharacterTemplate currentCharacterTemplate = null;
+
+        if (talkingCharacter != Character.player)
+        {
+            for (int i = 0; i < allCharaTemplates.Length; i++)
+            {
+                if (allCharaTemplates[i].character == characterEnum)
+                {
+                    currentCharacterTemplate = allCharaTemplates[i];
+                }
+            }
+
+            if (currentCharacterTemplate == null)
+            {
+                Debug.LogWarning("DialogueManager.CharacterTemplateSelector: aucun template trouvé");
+            }
+        }
+
+        return currentCharacterTemplate;
+    }
 }

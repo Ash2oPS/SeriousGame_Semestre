@@ -21,14 +21,14 @@ public class WallMovement : MonoBehaviour
 
     public void Update()
     {
-        if(wall_is_moving)
+        if (wall_is_moving)
         {
             lerp_value += wall_speed * Time.deltaTime;
-            if(lerp_value<1)
+            if (lerp_value < 1)
             {
                 for (int i = 0; i < listOfWalls.Count; i++)
                 {
-                    listOfWalls[i].transform.position = Vector3.Lerp(listOfStartingPos[i],new Vector3(0f,-is_moving_up * wall_height,0f) + listOfStartingPos[i], lerp_value);
+                    listOfWalls[i].transform.position = Vector3.Lerp(listOfStartingPos[i], new Vector3(0f, -is_moving_up * wall_height, 0f) + listOfStartingPos[i], lerp_value);
                 }
             }
             else
@@ -36,7 +36,7 @@ public class WallMovement : MonoBehaviour
                 lerp_value = 1f;
                 for (int i = 0; i < listOfWalls.Count; i++)
                 {
-                    listOfWalls[i].transform.position = Vector3.Lerp(listOfStartingPos[i],new Vector3(0f,-is_moving_up * wall_height,0f) + listOfStartingPos[i], lerp_value);
+                    listOfWalls[i].transform.position = Vector3.Lerp(listOfStartingPos[i], new Vector3(0f, -is_moving_up * wall_height, 0f) + listOfStartingPos[i], lerp_value);
                 }
                 wall_is_moving = false;
             }
@@ -45,13 +45,13 @@ public class WallMovement : MonoBehaviour
 
     public void Switch_Walls_Position()
     {
-        if(!wall_is_moving)
+        if (!wall_is_moving)
         {
             listOfStartingPos.Clear();
             wall_is_moving = true;
             is_moving_up = (is_moving_up == 1f) ? -1f : 1f;
             lerp_value = 0;
-            for(int i = 0; i < listOfWalls.Count; i++)
+            for (int i = 0; i < listOfWalls.Count; i++)
             {
                 listOfStartingPos.Add(listOfWalls[i].transform.position);
             }

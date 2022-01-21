@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class AlwaysFacingCamera : MonoBehaviour
 {
-
     private Transform cameraToFace;
 
-    void Start()
+    private void Start()
     {
         cameraToFace = FindObjectOfType<Camera>().transform;
         GetComponent<SpriteRenderer>().flipX = true;
     }
 
-
-    void Update()
+    private void Update()
     {
-        transform.LookAt(cameraToFace);
+        //transform.LookAt(cameraToFace);
+
+        Vector3 difference = cameraToFace.position - transform.position;
+        float rotationY = Mathf.Atan2(difference.x, difference.z) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0.0f, rotationY, 0.0f);
     }
 }

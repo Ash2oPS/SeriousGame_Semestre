@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fa8477378817b4cafe732ebc7fa711, type: 3}
+  m_Name: Jerome_char
+  m_EditorClassIdentifier: 
+  character: 1
+  nomDuPerso: "J\xE9r\xF4me"
+  idleSprite: {fileID: 21300000, guid: 5a8dae5df1fcd6246b4dffe866627e69, type: 3}
+  idleSprite2: {fileID: 21300000, guid: ee83b988189898240bdf65a4c6ff6da5, type: 3}
+  taille: 0.8
+  spriteNeutre:
+    emotionName: 0
+    emotionSprite: {fileID: 21300000, guid: 797c27f67cc249f48afdd086acdbcd98, type: 3}
+  spriteHeureux:
+    emotionName: 1
+    emotionSprite: {fileID: 0}
+  spriteTrsite:
+    emotionName: 2
+    emotionSprite: {fileID: 0}
+  spriteReflexion:
+    emotionName: 3
+    emotionSprite: {fileID: 21300000, guid: 45d2c57a6c6762f4f9865145459e8b54, type: 3}
+  spriteColere:
+    emotionName: 4
+    emotionSprite: {fileID: 21300000, guid: b9478cbbb92e41d4f9347687ffec347e, type: 3}
+  spriteInquiet:
+    emotionName: 5
+    emotionSprite: {fileID: 21300000, guid: ef3e2a9f894ab3e40a2c8a06405279af, type: 3}
+  spriteIntrigue:
+    emotionName: 6
+    emotionSprite: {fileID: 0}
+  spriteSurpris:
+    emotionName: 7
+    emotionSprite: {fileID: 0}
+  spriteCursed:
+    emotionName: 8
+    emotionSprite: {fileID: 0}
+  voice: []
+  defaultDialogue: {fileID: 11400000, guid: 445cc97082379c9478c1e0281d06dde5, type: 2}
+  dialogueChoiceBySwitches:
+  - _switchIDs: presentationJerome
+    _dialogue: {fileID: 11400000, guid: 5d8aecb2f4e429d44ae1c03259cf861d, type: 2}

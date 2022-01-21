@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fa8477378817b4cafe732ebc7fa711, type: 3}
+  m_Name: Louis_char
+  m_EditorClassIdentifier: 
+  character: 5
+  nomDuPerso: Louis
+  idleSprite: {fileID: 21300000, guid: f1daf689d2e087542a2a4b3fd3724399, type: 3}
+  idleSprite2: {fileID: 21300000, guid: e27bbe15a26f54b4b9db804642d46e9a, type: 3}
+  taille: 1.35
+  spriteNeutre:
+    emotionName: 0
+    emotionSprite: {fileID: 21300000, guid: 9f0458134271ebe488ae14564dce02c8, type: 3}
+  spriteHeureux:
+    emotionName: 1
+    emotionSprite: {fileID: 21300000, guid: 9396e30552e994943b13813a34a07f3f, type: 3}
+  spriteTrsite:
+    emotionName: 2
+    emotionSprite: {fileID: 0}
+  spriteReflexion:
+    emotionName: 3
+    emotionSprite: {fileID: 21300000, guid: 0073945fa1d583c4ab0d34f00262fb1a, type: 3}
+  spriteColere:
+    emotionName: 4
+    emotionSprite: {fileID: 0}
+  spriteInquiet:
+    emotionName: 5
+    emotionSprite: {fileID: 0}
+  spriteIntrigue:
+    emotionName: 6
+    emotionSprite: {fileID: 21300000, guid: 85caf6375770e1945a397744669f394b, type: 3}
+  spriteSurpris:
+    emotionName: 7
+    emotionSprite: {fileID: 0}
+  spriteCursed:
+    emotionName: 8
+    emotionSprite: {fileID: 21300000, guid: 5a6683b9a9c8fac44b99d012c84f79d8, type: 3}
+  voice: []
+  defaultDialogue: {fileID: 11400000, guid: b90e8121ac5207a40a03157175f0c0c8, type: 2}
+  dialogueChoiceBySwitches:
+  - _switchIDs: presentationLouis
+    _dialogue: {fileID: 11400000, guid: e86ecc432731e354d996079c8ccbd326, type: 2}
