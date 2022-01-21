@@ -64,6 +64,7 @@ public class DialogueManager : MonoBehaviour
     public void DialogueBegin(CharacterTemplate ct)
     {
         TextBoxesZero();
+        ImagesZero();
         charaTemplate = ct;
         DialoguePicker();
         talkingCharacter = ct.character;
@@ -115,6 +116,7 @@ public class DialogueManager : MonoBehaviour
             dialogueUI.enabled = false;
             talkingCharacter = Character.none;
             TextBoxesZero();
+            ImagesZero();
             DialogueToPick dtp = FindObjectOfType<DialogueToPick>();
             switchMan.SetSwitch(currentDialogue.switchToSetToTrue, true);
         }
@@ -172,6 +174,10 @@ public class DialogueManager : MonoBehaviour
         textUIShadow.text = "";
         nameUI.text = "";
         nameUIShadow.text = "";
+    }
+
+    private void ImagesZero()
+    {
         persoUI1.sprite = invisiSprite;
         persoUI2.sprite = invisiSprite;
         persoUI3.sprite = invisiSprite;

@@ -16,7 +16,7 @@ MonoBehaviour:
   - quiParle: 2
     emotionDuPerso: 0
     replique: "Bonjour monsieur, vous devez \xEAtre l'enqu\xE9teur qui s'occupe du
-      vol de la tapisserie, c'est bien cela ?"
+      vol de la tapisserie#0,5#, c'est bien cela ?"
     animation: 0
     evenement: 1
     persoEvenement: 2
@@ -27,7 +27,7 @@ MonoBehaviour:
     evenement: 0
     persoEvenement: 0
   - quiParle: 2
-    emotionDuPerso: 0
+    emotionDuPerso: 1
     replique: Super, allez hop, occupez-vous bien de tout cela, on a besoin de cette
       tapisserie, oulalah.
     animation: 0

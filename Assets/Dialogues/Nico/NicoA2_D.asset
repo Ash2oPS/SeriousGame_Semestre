@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - quiParle: 4
-    emotionDuPerso: 0
+    emotionDuPerso: 5
     replique: Oui ?
     animation: 0
     evenement: 1
     persoEvenement: 4
+  switchToSetToTrue: 

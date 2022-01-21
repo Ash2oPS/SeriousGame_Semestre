@@ -26,7 +26,7 @@ MonoBehaviour:
     evenement: 0
     persoEvenement: 0
   - quiParle: 1
-    emotionDuPerso: 0
+    emotionDuPerso: 3
     replique: Oui.
     animation: 0
     evenement: 0

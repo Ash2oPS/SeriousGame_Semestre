@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - quiParle: 2
-    emotionDuPerso: 0
-    replique: "C'est bon ? C'est retrouv\xE9 ? Non ? Alors gogogogogogogo."
+    emotionDuPerso: 4
+    replique: "C'est bon ?#0,5# C'est retrouv\xE9 ?#0,5# Non ?#0,5# Alors gogogogogogogo."
     animation: 0
     evenement: 1
     persoEvenement: 2
+  switchToSetToTrue: 

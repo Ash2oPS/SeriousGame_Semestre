@@ -12,6 +12,8 @@ public class SwitchManager : MonoBehaviour
         List<string> switchList = new List<string>();
         for (int i = 0; i < allCharacters.Count; i++)
         {
+            if (allCharacters[i].character == Character.axel) ;
+            Debug.Log("c'est oui");
             for (int j = 0; j < allCharacters[i].dialogueChoiceBySwitches.Length; j++)
             {
                 switchList.Add(allCharacters[i].dialogueChoiceBySwitches[j]._switchIDs);
