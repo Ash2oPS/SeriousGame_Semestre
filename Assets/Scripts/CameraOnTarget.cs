@@ -35,7 +35,7 @@ public class CameraOnTarget : MonoBehaviour
         rotOrigin = Camera.main.transform.rotation;
         rotFinal = Quaternion.Euler(rotationCam_x,rotationCam_y,rotationCam_z);
         posOrigin = Camera.main.transform.position;
-        posFinal = transform.position  - Quaternion.Euler(rotationCam_x,rotationCam_y,rotationCam_z) * Vector3.forward * 10.0f;
+        posFinal = positionCamera - Quaternion.Euler(rotationCam_x,rotationCam_y,rotationCam_z) * Vector3.forward * 10.0f;
         isLerpingTranslation = true;
         isLerpingRotation = true;
         //Camera.main.transform.rotation = Quaternion.Euler(rotationCam_x, rotationCam_y, rotationCam_z);
