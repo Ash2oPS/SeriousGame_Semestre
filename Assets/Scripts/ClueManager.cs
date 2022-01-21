@@ -27,8 +27,12 @@ public class ClueManager : MonoBehaviour
     public Image imageJournal;
 
     public bool displayedMap = false;
+    public bool isRDC = false;
     public Image imageMap;
+    public Image imageMapRDC;
     public Image imageButtonRDC;
+    public Image imageButtonRDC2;
+
 
     void Start()
     {
@@ -39,16 +43,24 @@ public class ClueManager : MonoBehaviour
             /*GameObject sprite = listOfCluesImages[i];
             sprite.transform.position = new Vector3(listOfPositions[i].x, listOfPositions[i].y, 0);*/
         }
+        
+        imageMap.enabled = displayedMap;
+        imageMapRDC.enabled = displayedMap;
+        imageButtonRDC.enabled = displayedMap;
+        imageButtonRDC2.enabled = displayedMap;
+        imagePointeur.enabled = displayedMap;
     }
 
     void Update()
     {
-        imagePointeur.rectTransform.position = new Vector3 (listOfRoomPositions[currentRoom].x, listOfRoomPositions[currentRoom].y, 0);
+        
     }
     public void ToggleJournal()
     {
-        displayedJournal = displayedJournal ? false : true;
+        displayedJournal = !displayedJournal;
         imageJournal.enabled = displayedJournal;
+        imageButtonRDC.enabled = displayedMap && !isRDC;
+        imageButtonRDC2.enabled = displayedMap && isRDC;
 
         for (int i = 0; i < listOfCluesBool.Count; i++)
         {
@@ -57,9 +69,21 @@ public class ClueManager : MonoBehaviour
     }
     public void ToggleMap()
     {
-        displayedMap = displayedMap ? false : true;
-        imageMap.enabled = displayedMap;
-        imageButtonRDC.enabled = displayedMap;
+        displayedMap = !displayedMap;
+        imageMap.enabled = displayedMap && !isRDC;
+        imageMapRDC.enabled = displayedMap && isRDC;
+        imageButtonRDC.enabled = displayedMap && !isRDC;
+        imageButtonRDC2.enabled = displayedMap && isRDC;
+        imagePointeur.enabled = displayedMap;
+    }
+    public void ToggleRDC()
+    {
+        isRDC = !isRDC;
+        imageMap.enabled = displayedMap && !isRDC;
+        imageMapRDC.enabled = displayedMap && isRDC;
+        imageButtonRDC.enabled = displayedMap && !isRDC;
+        imageButtonRDC2.enabled = displayedMap && isRDC;
+        imagePointeur.enabled = !isRDC;
     }
     private void DisplayClueNumber(int i)
     {
