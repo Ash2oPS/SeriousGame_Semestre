@@ -19,11 +19,16 @@ public class ClueManager : MonoBehaviour
     public List<bool> listOfCluesBool;
     public List<Vector2> listOfPositions;
 
+    public int currentRoom;
+    public List<Vector2> listOfRoomPositions;
+    public Image imagePointeur;
+
     public bool displayedJournal = false;
     public Image imageJournal;
 
     public bool displayedMap = false;
     public Image imageMap;
+    public Image imageButtonRDC;
 
     void Start()
     {
@@ -38,7 +43,7 @@ public class ClueManager : MonoBehaviour
 
     void Update()
     {
-        
+        imagePointeur.rectTransform.position = new Vector3 (listOfRoomPositions[currentRoom].x, listOfRoomPositions[currentRoom].y, 0);
     }
     public void ToggleJournal()
     {
@@ -54,6 +59,7 @@ public class ClueManager : MonoBehaviour
     {
         displayedMap = displayedMap ? false : true;
         imageMap.enabled = displayedMap;
+        imageButtonRDC.enabled = displayedMap;
     }
     private void DisplayClueNumber(int i)
     {
