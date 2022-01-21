@@ -48,4 +48,6 @@ MonoBehaviour:
   defaultDialogue: {fileID: 11400000, guid: 3349af2daabf4da4fad36de57bd200cd, type: 2}
   dialogueChoiceBySwitches:
   - _switchIDs: presentationNico
+    _dialogue: {fileID: 11400000, guid: e055c9f067a539149ada3bb0b901285e, type: 2}
+  - _switchIDs: versNico
     _dialogue: {fileID: 11400000, guid: 9d429cea94a452444bf5f916ffb407fc, type: 2}

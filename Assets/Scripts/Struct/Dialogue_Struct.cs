@@ -8,7 +8,7 @@ public struct Dialogue_Struct
     public Character quiParle;
     public Emotion emotionDuPerso;
 
-    [TextArea(1, 2)]
+    [TextArea(1, 5)]
     public string replique;
 
     public DialAnimation animation;

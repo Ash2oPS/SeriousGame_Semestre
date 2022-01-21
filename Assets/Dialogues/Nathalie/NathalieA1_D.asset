@@ -33,10 +33,11 @@ MonoBehaviour:
     animation: 0
     evenement: 0
     persoEvenement: 0
-  - quiParle: 8
+  - quiParle: 2
     emotionDuPerso: 0
-    replique: Okiii.
+    replique: "Commencez par aller voir J\xE9r\xF4me le pigeon, il saura vous dire
+      des choses."
     animation: 0
     evenement: 0
     persoEvenement: 0
-  switchToSetToTrue: presentationNathalie
+  switchToSetToTrue: allerVoirJerome
