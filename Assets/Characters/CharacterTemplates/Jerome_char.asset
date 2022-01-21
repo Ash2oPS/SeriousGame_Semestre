@@ -26,7 +26,7 @@ MonoBehaviour:
   nbSeqRes3: 0
   fin: 0
   voice: []
-  defaultDialogue: {fileID: 11400000, guid: 5d8aecb2f4e429d44ae1c03259cf861d, type: 2}
+  defaultDialogue: {fileID: 11400000, guid: 445cc97082379c9478c1e0281d06dde5, type: 2}
   dialogueChoiceBySwitches:
-  - _switchIDs: presentationFaite
-    _dialogue: {fileID: 11400000, guid: 445cc97082379c9478c1e0281d06dde5, type: 2}
+  - _switchIDs: presentationJerome
+    _dialogue: {fileID: 11400000, guid: 5d8aecb2f4e429d44ae1c03259cf861d, type: 2}

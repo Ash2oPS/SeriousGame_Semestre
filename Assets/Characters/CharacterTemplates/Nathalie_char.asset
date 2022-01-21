@@ -28,5 +28,5 @@ MonoBehaviour:
   voice: []
   defaultDialogue: {fileID: 11400000, guid: 86faf2d81dd00ab4a80b07b78bf07cb8, type: 2}
   dialogueChoiceBySwitches:
-  - _switchIDs: presentationFaite
+  - _switchIDs: presentationNathalie
     _dialogue: {fileID: 11400000, guid: 56a45ce496509c64da5d35c832f99b58, type: 2}

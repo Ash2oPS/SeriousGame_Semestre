@@ -49,6 +49,7 @@ public class DialogueManager : MonoBehaviour
             if (switchMan.CheckSwitch(dcs._switchIDs))
             {
                 currentDialogue = dcs._dialogue;
+                return;
             }
         }
         currentDialogue = charaTemplate.defaultDialogue;

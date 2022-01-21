@@ -43,3 +43,4 @@ MonoBehaviour:
     animation: 0
     evenement: 2
     persoEvenement: 6
+  switchToSetToTrue: presentationThibault

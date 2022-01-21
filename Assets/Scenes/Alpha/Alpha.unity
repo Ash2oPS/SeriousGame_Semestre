@@ -983,9 +983,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dce0932ed05f94a99837528968efb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switches:
-  - id: 
-    value: 0
+  switches: []
+  allCharacters:
+  - {fileID: 11400000, guid: 7945f7a714650914a8e9e3e05eb76a98, type: 2}
+  - {fileID: 11400000, guid: 2b3f3b3ec5d8450409570e2aed0780e1, type: 2}
+  - {fileID: 11400000, guid: 79794bc4823ca1d46ba4cab2ba665ed1, type: 2}
+  - {fileID: 11400000, guid: 8d4e141efe567cf4d9346484fa5f313d, type: 2}
+  - {fileID: 11400000, guid: a464a44bbf192c247ad91401492f91d2, type: 2}
+  - {fileID: 11400000, guid: 080692199d7c6f745930b9086cd06ca5, type: 2}
+  - {fileID: 11400000, guid: b47a1d8da3686534d82406da1a172a8f, type: 2}
 --- !u!114 &568250448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,6 +3503,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506816856}
     m_Modifications:
+    - target: {fileID: 2217264839716043766, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3589001162138707532, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3589001162138707532, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3589001162138707532, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
       propertyPath: m_fontColorGradient.topLeft.b
       value: 0.07725168
@@ -3678,6 +3696,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5172864004059400411, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172864004059400411, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
       propertyPath: m_fontColorGradient.bottomLeft.b
       value: 0.6698469
       objectReference: {fileID: 0}
@@ -3700,6 +3722,14 @@ PrefabInstance:
     - target: {fileID: 5172864004059400411, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
       propertyPath: m_fontColorGradient.bottomRight.r
       value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468049133732971380, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468049133732971380, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7468049133732971380, guid: 5ed94b99eaacce945a96dc4548febda1, type: 3}
       propertyPath: m_fontColorGradient.bottomLeft.a
