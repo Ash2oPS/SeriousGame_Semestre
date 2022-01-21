@@ -67,7 +67,7 @@ MonoBehaviour:
   - quiParle: 4
     emotionDuPerso: 0
     replique: "Tout \xE7a n'est que du work in progress tu sais, @. Beaucoup de choses
-      t'attendent dans la version finale du jeu."
+      t'attendent dans la ersion finale du jeu."
     animation: 0
     evenement: 1
     persoEvenement: 4
