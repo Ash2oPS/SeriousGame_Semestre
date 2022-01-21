@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af149f282798f864194b4c864a876edf, type: 3}
+  m_Name: NicoA3_D
+  m_EditorClassIdentifier: 
+  dialogue:
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: "Vous pouvez me parler du vol de la tapisserie ? J\xE9r\xF4me n'avait
+      pas trop l'air au courant ?"
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  - quiParle: 4
+    emotionDuPerso: 2
+    replique: "LA TAPISSERIE A \xE9T\xE9 VOL\xE9E ??"
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  - quiParle: 4
+    emotionDuPerso: 2
+    replique: NOUS SOMMES FICHUS !!
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  - quiParle: 4
+    emotionDuPerso: 0
+    replique: Non je plaisante je le savais.
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: Okay...
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  - quiParle: 4
+    emotionDuPerso: 0
+    replique: "Enfin tout \xE7a pour dire que tout cela n'\xE9tait qu'une micro mise
+      en sc\xE8ne pour montrer le syst\xE8me de \"qu\xEAte\"."
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  - quiParle: 4
+    emotionDuPerso: 0
+    replique: "Vous n'avez plus qu'\xE0 vous balader librement dans les 2 salles,
+      c'est ce qui a pu \xEAtre int\xE9gr\xE9 dans le temps imparti."
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: Oh chic alors ! Tout me semble fantastique pour l'instant !
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  - quiParle: 4
+    emotionDuPerso: 0
+    replique: "Tout \xE7a n'est que du work in progress tu sais, @. Beaucoup de choses
+      t'attendent dans la version finale du jeu."
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  - quiParle: 8
+    emotionDuPerso: 0
+    replique: "J'ai h\xE2te de voir \xE7a !"
+    animation: 0
+    evenement: 1
+    persoEvenement: 4
+  switchToSetToTrue: 

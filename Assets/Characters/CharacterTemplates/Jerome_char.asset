@@ -49,3 +49,5 @@ MonoBehaviour:
   dialogueChoiceBySwitches:
   - _switchIDs: presentationJerome
     _dialogue: {fileID: 11400000, guid: 5d8aecb2f4e429d44ae1c03259cf861d, type: 2}
+  - _switchIDs: allerVoirJerome
+    _dialogue: {fileID: 11400000, guid: 0967f7bf323c17845989f19e3223355c, type: 2}
