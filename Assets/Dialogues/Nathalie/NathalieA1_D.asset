@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - quiParle: 2
     emotionDuPerso: 0
-    replique: "Bonjour monsieur, vous devez \xEAtre l'enqu\xE9teur qui s'occupe du
+    replique: "Bonjour monsieur, vous devez \xEAtre l'enqu\xEAteur qui s'occupe du
       vol de la tapisserie#0,5#, c'est bien cela ?"
     animation: 0
     evenement: 1

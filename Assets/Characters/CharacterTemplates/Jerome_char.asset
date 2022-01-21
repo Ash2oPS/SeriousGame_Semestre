@@ -15,6 +15,7 @@ MonoBehaviour:
   character: 1
   nomDuPerso: "J\xE9r\xF4me"
   idleSprite: {fileID: 21300000, guid: 5a8dae5df1fcd6246b4dffe866627e69, type: 3}
+  idleSprite2: {fileID: 21300000, guid: ee83b988189898240bdf65a4c6ff6da5, type: 3}
   taille: 0.8
   spriteNeutre:
     emotionName: 0

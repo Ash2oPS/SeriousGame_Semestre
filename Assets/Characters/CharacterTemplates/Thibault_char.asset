@@ -15,6 +15,7 @@ MonoBehaviour:
   character: 6
   nomDuPerso: Thibault
   idleSprite: {fileID: 21300000, guid: 7797e02d42533ca4abe87aaeb28904d9, type: 3}
+  idleSprite2: {fileID: 21300000, guid: 7876a3660c3111d44a4c484d53f475c5, type: 3}
   taille: 0.6
   spriteNeutre:
     emotionName: 0
@@ -46,5 +47,5 @@ MonoBehaviour:
   voice: []
   defaultDialogue: {fileID: 11400000, guid: 5153ff190d575a641bccdcad8815dfa4, type: 2}
   dialogueChoiceBySwitches:
-  - _switchIDs: presentationThibaut
+  - _switchIDs: presentationThibault
     _dialogue: {fileID: 11400000, guid: 975fea97efb12d84db742dbd44db7360, type: 2}

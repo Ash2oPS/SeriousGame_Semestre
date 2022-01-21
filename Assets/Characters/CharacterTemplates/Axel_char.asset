@@ -15,6 +15,7 @@ MonoBehaviour:
   character: 3
   nomDuPerso: Axel
   idleSprite: {fileID: 21300000, guid: 0228695a4b7c11d4b8b92e5aac1fade2, type: 3}
+  idleSprite2: {fileID: 21300000, guid: 589c9c32c910a154a9a92f7e65e1f42a, type: 3}
   taille: 1.5
   spriteNeutre:
     emotionName: 0

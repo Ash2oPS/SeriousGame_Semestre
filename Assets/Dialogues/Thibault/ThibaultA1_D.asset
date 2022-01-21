@@ -33,7 +33,7 @@ MonoBehaviour:
     persoEvenement: 5
   - quiParle: 6
     emotionDuPerso: 0
-    replique: Ah daccord.
+    replique: Ah d'accord.
     animation: 0
     evenement: 2
     persoEvenement: 5

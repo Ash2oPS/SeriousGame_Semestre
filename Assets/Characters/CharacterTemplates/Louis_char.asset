@@ -15,6 +15,7 @@ MonoBehaviour:
   character: 5
   nomDuPerso: Louis
   idleSprite: {fileID: 21300000, guid: f1daf689d2e087542a2a4b3fd3724399, type: 3}
+  idleSprite2: {fileID: 21300000, guid: e27bbe15a26f54b4b9db804642d46e9a, type: 3}
   taille: 1.35
   spriteNeutre:
     emotionName: 0

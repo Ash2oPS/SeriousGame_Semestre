@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - quiParle: 1
-    emotionDuPerso: 4
+    emotionDuPerso: 3
     replique: "Oui bah \xE7a va, on se connait.#5,5#\nSaucisse."
     animation: 0
     evenement: 1

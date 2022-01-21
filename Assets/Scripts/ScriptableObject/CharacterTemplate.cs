@@ -7,7 +7,7 @@ public class CharacterTemplate : ScriptableObject
 {
     public Character character;
     public string nomDuPerso;
-    public Sprite idleSprite;
+    public Sprite idleSprite, idleSprite2;
     public float taille;
 
     public EmotionsToSprite spriteNeutre = new EmotionsToSprite(Emotion.neutre, null);

@@ -15,6 +15,7 @@ MonoBehaviour:
   character: 4
   nomDuPerso: Nico
   idleSprite: {fileID: 21300000, guid: ab08396ef454abe4ba35474d6aaff3fc, type: 3}
+  idleSprite2: {fileID: 21300000, guid: 5cf3419e971a50244b0c3217b59cf449, type: 3}
   taille: 1.6
   spriteNeutre:
     emotionName: 0
