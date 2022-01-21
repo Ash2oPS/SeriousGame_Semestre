@@ -16,15 +16,33 @@ MonoBehaviour:
   nomDuPerso: Nathalie
   idleSprite: {fileID: 21300000, guid: a19603acb8033924a86ee8dbadc0dd8c, type: 3}
   taille: 0.8
-  characterEnumInt: 2
-  nbSeqIntro: 0
-  nbSeqInv1: 0
-  nbSeqRes1: 0
-  nbSeqInv2: 0
-  nbSeqRes2: 0
-  nbSeqInv3: 0
-  nbSeqRes3: 0
-  fin: 0
+  spriteNeutre:
+    emotionName: 0
+    emotionSprite: {fileID: 21300000, guid: 32d4f3a348269144fa4442897d48d1ab, type: 3}
+  spriteHeureux:
+    emotionName: 1
+    emotionSprite: {fileID: 21300000, guid: bb5297df13cb0fd46b9d9aa954fd455a, type: 3}
+  spriteTrsite:
+    emotionName: 2
+    emotionSprite: {fileID: 0}
+  spriteReflexion:
+    emotionName: 3
+    emotionSprite: {fileID: 0}
+  spriteColere:
+    emotionName: 4
+    emotionSprite: {fileID: 21300000, guid: 0faeedd967fa94040ab65b7b61583089, type: 3}
+  spriteInquiet:
+    emotionName: 5
+    emotionSprite: {fileID: 21300000, guid: f32b078dcbf9623429fcc70064db325d, type: 3}
+  spriteIntrigue:
+    emotionName: 6
+    emotionSprite: {fileID: 0}
+  spriteSurpris:
+    emotionName: 7
+    emotionSprite: {fileID: 21300000, guid: adfd41816bf0e9d47a6a246802af8fa4, type: 3}
+  spriteCursed:
+    emotionName: 8
+    emotionSprite: {fileID: 0}
   voice: []
   defaultDialogue: {fileID: 11400000, guid: 86faf2d81dd00ab4a80b07b78bf07cb8, type: 2}
   dialogueChoiceBySwitches:

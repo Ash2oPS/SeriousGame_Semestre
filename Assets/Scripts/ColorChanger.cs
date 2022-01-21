@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
 {
-    private DialogueManager dm; 
+    private DialogueManager dm;
     private SpriteRenderer sr;
 
     private void Start()
     {
         dm = FindObjectOfType<DialogueManager>();
-        sr = GetComponent<SpriteRenderer>();   
+        sr = GetComponent<SpriteRenderer>();
     }
 
     public void ChangeColor(int newColor)

@@ -16,15 +16,33 @@ MonoBehaviour:
   nomDuPerso: "J\xE9r\xF4me"
   idleSprite: {fileID: 21300000, guid: 5a8dae5df1fcd6246b4dffe866627e69, type: 3}
   taille: 0.8
-  characterEnumInt: 1
-  nbSeqIntro: 0
-  nbSeqInv1: 3
-  nbSeqRes1: 0
-  nbSeqInv2: 0
-  nbSeqRes2: 0
-  nbSeqInv3: 0
-  nbSeqRes3: 0
-  fin: 0
+  spriteNeutre:
+    emotionName: 0
+    emotionSprite: {fileID: 21300000, guid: 797c27f67cc249f48afdd086acdbcd98, type: 3}
+  spriteHeureux:
+    emotionName: 1
+    emotionSprite: {fileID: 0}
+  spriteTrsite:
+    emotionName: 2
+    emotionSprite: {fileID: 0}
+  spriteReflexion:
+    emotionName: 3
+    emotionSprite: {fileID: 21300000, guid: 45d2c57a6c6762f4f9865145459e8b54, type: 3}
+  spriteColere:
+    emotionName: 4
+    emotionSprite: {fileID: 21300000, guid: b9478cbbb92e41d4f9347687ffec347e, type: 3}
+  spriteInquiet:
+    emotionName: 5
+    emotionSprite: {fileID: 21300000, guid: ef3e2a9f894ab3e40a2c8a06405279af, type: 3}
+  spriteIntrigue:
+    emotionName: 6
+    emotionSprite: {fileID: 0}
+  spriteSurpris:
+    emotionName: 7
+    emotionSprite: {fileID: 0}
+  spriteCursed:
+    emotionName: 8
+    emotionSprite: {fileID: 0}
   voice: []
   defaultDialogue: {fileID: 11400000, guid: 445cc97082379c9478c1e0281d06dde5, type: 2}
   dialogueChoiceBySwitches:

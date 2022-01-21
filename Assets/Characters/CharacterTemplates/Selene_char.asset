@@ -16,15 +16,33 @@ MonoBehaviour:
   nomDuPerso: Selene
   idleSprite: {fileID: 21300000, guid: f23b8a2181c24b04b90f294cae9eefdf, type: 3}
   taille: 0.9
-  characterEnumInt: 7
-  nbSeqIntro: 0
-  nbSeqInv1: 0
-  nbSeqRes1: 0
-  nbSeqInv2: 0
-  nbSeqRes2: 0
-  nbSeqInv3: 0
-  nbSeqRes3: 0
-  fin: 0
+  spriteNeutre:
+    emotionName: 0
+    emotionSprite: {fileID: 21300000, guid: b7df27be5dc1151408189d7c43ae7130, type: 3}
+  spriteHeureux:
+    emotionName: 1
+    emotionSprite: {fileID: 21300000, guid: ca0198ac2e04ecb49a421a2da2f19946, type: 3}
+  spriteTrsite:
+    emotionName: 2
+    emotionSprite: {fileID: 0}
+  spriteReflexion:
+    emotionName: 3
+    emotionSprite: {fileID: 21300000, guid: 2dd478e1aa63542458af41bcdbb887a3, type: 3}
+  spriteColere:
+    emotionName: 4
+    emotionSprite: {fileID: 0}
+  spriteInquiet:
+    emotionName: 5
+    emotionSprite: {fileID: 21300000, guid: 4681f3476ee211d4a840ae32fe54c0f6, type: 3}
+  spriteIntrigue:
+    emotionName: 6
+    emotionSprite: {fileID: 21300000, guid: 6d624ea521b6f5c49b862708031c5c9c, type: 3}
+  spriteSurpris:
+    emotionName: 7
+    emotionSprite: {fileID: 0}
+  spriteCursed:
+    emotionName: 8
+    emotionSprite: {fileID: 0}
   voice: []
   defaultDialogue: {fileID: 11400000, guid: 3e3ecaec1635c6b4b9de26ae0a904c93, type: 2}
   dialogueChoiceBySwitches:

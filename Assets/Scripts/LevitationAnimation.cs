@@ -14,18 +14,29 @@ public class LevitationAnimation : MonoBehaviour
     public float frequency = 3f;
     public float amplitude = 0.1f;
 
+    public bool applyToLocal;
+
     private void Start()
     {
         tf = transform;
         dm = FindObjectOfType<DialogueManager>();
-        baseX = tf.position.x;
-        baseY = tf.position.y;
-        baseZ = tf.position.z;
+        if (!applyToLocal)
+        {
+            baseX = tf.position.x;
+            baseY = tf.position.y;
+            baseZ = tf.position.z;
+        }
+        else
+        {
+            baseX = tf.localPosition.x;
+            baseY = tf.localPosition.y;
+            baseZ = tf.localPosition.z;
+        }
     }
 
     private void Update()
     {
-        if (dm.talkingCharacter == Character.none)
+        if (!dm.isDialogueOn)
         {
             newY = baseY + Mathf.Sin(timer * frequency) * amplitude;
 
@@ -37,7 +48,14 @@ public class LevitationAnimation : MonoBehaviour
             }
             else
             {
-                tf.position = new Vector3(baseX, newY, baseZ);
+                if (!applyToLocal)
+                {
+                    tf.position = new Vector3(baseX, newY, baseZ);
+                }
+                else
+                {
+                    tf.localPosition = new Vector3(baseX, newY, baseZ);
+                }
             }
 
             timer += Time.deltaTime;

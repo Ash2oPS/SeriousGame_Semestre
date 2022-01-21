@@ -8,11 +8,17 @@ public class DialogueManager : MonoBehaviour
 {
     public bool isDialogueOn = false;
     public Canvas dialogueUI = null;
+    public Image persoUI1, persoUI2, persoUI3;
+    public Sprite invisiSprite;
     public TextMeshProUGUI textUI, textUIShadow, nameUI, nameUIShadow;
     public int dialogueIndex = 0;
     public Dialogue[] allDialogues;
     private Dialogue currentDialogue;
     private CharacterTemplate charaTemplate;
+
+    [SerializeField]
+    private CharacterTemplate[] allCharaTemplates;
+
     public Character talkingCharacter;
     public SwitchManager switchMan;
     private GameManager gm;
@@ -69,6 +75,7 @@ public class DialogueManager : MonoBehaviour
             dialogueIndex = 0;
             string replique = currentDialogue.dialogue[dialogueIndex].replique;
             replique = playerNameInDial.CheckAndReplace(replique);
+            AssignationImage(currentDialogue.dialogue[dialogueIndex].quiParle, currentDialogue.dialogue[dialogueIndex].emotionDuPerso, persoUI1);
             txtWriter.StartWriting(replique, textUI, textUIShadow);
         }
     }
@@ -89,6 +96,7 @@ public class DialogueManager : MonoBehaviour
                 string replique = currentDialogue.dialogue[dialogueIndex].replique;
                 replique = playerNameInDial.CheckAndReplace(replique);
                 NamePicker();
+                AssignationImage(currentDialogue.dialogue[dialogueIndex].quiParle, currentDialogue.dialogue[dialogueIndex].emotionDuPerso, persoUI1);
                 txtWriter.StartWriting(replique, textUI, textUIShadow);
             }
         }
@@ -164,5 +172,109 @@ public class DialogueManager : MonoBehaviour
         textUIShadow.text = "";
         nameUI.text = "";
         nameUIShadow.text = "";
+        persoUI1.sprite = invisiSprite;
+        persoUI2.sprite = invisiSprite;
+        persoUI3.sprite = invisiSprite;
+    }
+
+    public void AssignationImage(Character talkingChar, Emotion currentEmotion, Image uiImageToChange)
+    {
+        if (talkingChar != Character.player)
+        {
+            CharacterTemplate CharacterTemplateToCheck = CharacterTemplateSelector(talkingChar);
+
+            switch (currentEmotion)
+            {
+                case Emotion.neutre:
+                    if (CharacterTemplateToCheck.spriteNeutre.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteNeutre.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.heureux:
+                    if (CharacterTemplateToCheck.spriteHeureux.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteHeureux.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.triste:
+                    if (CharacterTemplateToCheck.spriteTrsite.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteTrsite.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.reflexion:
+                    if (CharacterTemplateToCheck.spriteReflexion.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteReflexion.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.colere:
+                    if (CharacterTemplateToCheck.spriteColere.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteColere.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.inquiet:
+                    if (CharacterTemplateToCheck.spriteInquiet.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteInquiet.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.intrigue:
+                    if (CharacterTemplateToCheck.spriteIntrigue.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteIntrigue.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.surpris:
+                    if (CharacterTemplateToCheck.spriteSurpris.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteSurpris.emotionSprite;
+                    }
+                    break;
+
+                case Emotion.cursed:
+                    if (CharacterTemplateToCheck.spriteCursed.emotionSprite != null)
+                    {
+                        uiImageToChange.sprite = CharacterTemplateToCheck.spriteCursed.emotionSprite;
+                    }
+                    break;
+
+                default:
+                    Debug.LogWarning("DialogueManager.AssignationImage - aucune image correspondante trouvée\ntalkingcharacter : " + talkingChar + "\ncurrentEmotion : " + currentEmotion + "\ncharacterTemplateToCheck : " + CharacterTemplateToCheck);
+                    break;
+            }
+        }
+    }
+
+    public CharacterTemplate CharacterTemplateSelector(Character characterEnum)
+    {
+        CharacterTemplate currentCharacterTemplate = null;
+
+        if (talkingCharacter != Character.player)
+        {
+            for (int i = 0; i < allCharaTemplates.Length; i++)
+            {
+                if (allCharaTemplates[i].character == characterEnum)
+                {
+                    currentCharacterTemplate = allCharaTemplates[i];
+                }
+            }
+
+            if (currentCharacterTemplate == null)
+            {
+                Debug.LogWarning("DialogueManager.CharacterTemplateSelector: aucun template trouvé");
+            }
+        }
+
+        return currentCharacterTemplate;
     }
 }

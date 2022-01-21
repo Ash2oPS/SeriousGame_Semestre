@@ -16,15 +16,33 @@ MonoBehaviour:
   nomDuPerso: Louis
   idleSprite: {fileID: 21300000, guid: f1daf689d2e087542a2a4b3fd3724399, type: 3}
   taille: 1.35
-  characterEnumInt: 5
-  nbSeqIntro: 0
-  nbSeqInv1: 0
-  nbSeqRes1: 0
-  nbSeqInv2: 0
-  nbSeqRes2: 0
-  nbSeqInv3: 0
-  nbSeqRes3: 0
-  fin: 0
+  spriteNeutre:
+    emotionName: 0
+    emotionSprite: {fileID: 21300000, guid: 9f0458134271ebe488ae14564dce02c8, type: 3}
+  spriteHeureux:
+    emotionName: 1
+    emotionSprite: {fileID: 21300000, guid: 9396e30552e994943b13813a34a07f3f, type: 3}
+  spriteTrsite:
+    emotionName: 2
+    emotionSprite: {fileID: 0}
+  spriteReflexion:
+    emotionName: 3
+    emotionSprite: {fileID: 21300000, guid: 0073945fa1d583c4ab0d34f00262fb1a, type: 3}
+  spriteColere:
+    emotionName: 4
+    emotionSprite: {fileID: 0}
+  spriteInquiet:
+    emotionName: 5
+    emotionSprite: {fileID: 0}
+  spriteIntrigue:
+    emotionName: 6
+    emotionSprite: {fileID: 21300000, guid: 85caf6375770e1945a397744669f394b, type: 3}
+  spriteSurpris:
+    emotionName: 7
+    emotionSprite: {fileID: 0}
+  spriteCursed:
+    emotionName: 8
+    emotionSprite: {fileID: 21300000, guid: 5a6683b9a9c8fac44b99d012c84f79d8, type: 3}
   voice: []
   defaultDialogue: {fileID: 11400000, guid: b90e8121ac5207a40a03157175f0c0c8, type: 2}
   dialogueChoiceBySwitches:

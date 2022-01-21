@@ -16,17 +16,33 @@ MonoBehaviour:
   nomDuPerso: Axel
   idleSprite: {fileID: 21300000, guid: 0228695a4b7c11d4b8b92e5aac1fade2, type: 3}
   taille: 1.5
-  characterEnumInt: 3
-  nbSeqIntro: 0
-  nbSeqInv1: 0
-  nbSeqRes1: 0
-  nbSeqInv2: 0
-  nbSeqRes2: 0
-  nbSeqInv3: 0
-  nbSeqRes3: 0
-  fin: 0
+  spriteNeutre:
+    emotionName: 0
+    emotionSprite: {fileID: 21300000, guid: 7699db993a6f09d4ca9ced066a6a8edc, type: 3}
+  spriteHeureux:
+    emotionName: 1
+    emotionSprite: {fileID: 21300000, guid: a275e15f9640f5443b4951c893b885dc, type: 3}
+  spriteTrsite:
+    emotionName: 2
+    emotionSprite: {fileID: 0}
+  spriteReflexion:
+    emotionName: 3
+    emotionSprite: {fileID: 21300000, guid: 848621165dea6f340ba57cb016c69200, type: 3}
+  spriteColere:
+    emotionName: 4
+    emotionSprite: {fileID: 0}
+  spriteInquiet:
+    emotionName: 5
+    emotionSprite: {fileID: 0}
+  spriteIntrigue:
+    emotionName: 6
+    emotionSprite: {fileID: 0}
+  spriteSurpris:
+    emotionName: 7
+    emotionSprite: {fileID: 0}
+  spriteCursed:
+    emotionName: 8
+    emotionSprite: {fileID: 0}
   voice: []
   defaultDialogue: {fileID: 11400000, guid: b656e4f658450ae46b308f3fd6188a8a, type: 2}
-  dialogueChoiceBySwitches:
-  - _switchIDs: presentationAxel
-    _dialogue: {fileID: 11400000, guid: 6d5ff5e8248404a4b9b9155ae0b46d77, type: 2}
+  dialogueChoiceBySwitches: []
