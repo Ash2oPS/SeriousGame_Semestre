@@ -57,6 +57,9 @@ public class ClueManager : MonoBehaviour
     }
     public void ToggleJournal()
     {
+        displayedMap = false;
+        imageMap.enabled = displayedMap && !isRDC;
+        imageMapRDC.enabled = displayedMap && isRDC;
         displayedJournal = !displayedJournal;
         imageJournal.enabled = displayedJournal;
         imageButtonRDC.enabled = displayedMap && !isRDC;
@@ -69,6 +72,8 @@ public class ClueManager : MonoBehaviour
     }
     public void ToggleMap()
     {
+        displayedJournal = false;
+        imageJournal.enabled = displayedJournal;
         displayedMap = !displayedMap;
         imageMap.enabled = displayedMap && !isRDC;
         imageMapRDC.enabled = displayedMap && isRDC;
@@ -82,6 +87,7 @@ public class ClueManager : MonoBehaviour
         imageMap.enabled = displayedMap && !isRDC;
         imageMapRDC.enabled = displayedMap && isRDC;
         imageButtonRDC.enabled = displayedMap && !isRDC;
+        Debug.Log(displayedMap && isRDC);
         imageButtonRDC2.enabled = displayedMap && isRDC;
         imagePointeur.enabled = !isRDC;
     }
